@@ -1,0 +1,7 @@
+CXX = g++
+objects = main.o StationSolver.o
+
+all: runGreedy
+
+runGreedy: $(objects)
+	$(CXX) -std=c++11 $(objects) -o runGreedy
