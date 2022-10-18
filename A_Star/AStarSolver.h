@@ -1,8 +1,12 @@
 #ifndef A_STAR_SOLVER_H
 #define A_STAR_SOLVER_H
 
-#include "GridWorld.hpp"
+#include <queue>
 #include <list>
+#include <iostream>
+#include "math.h"
+
+#include "GridWorld.hpp"
 
 using namespace std;
 
@@ -12,7 +16,6 @@ class AStarSolver {
         void printPath() const;
     private:
         vector<Node*> _visited;
-        list<Node*> _to_visit;
         vector<Node*> _curr_path;
 };
 

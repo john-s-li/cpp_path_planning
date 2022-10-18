@@ -31,7 +31,7 @@ class Node{
             _h = cost_h; }
 
     private:
-        Node* _parent; // TODO: use smart pointers later
+        Node* _parent; // TODO: use unique pointers later
         position _position;
         double _g; // exact cost
         double _h; // heuristic value
