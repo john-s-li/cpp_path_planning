@@ -84,7 +84,7 @@ void AStarSolver::printPath(const GridWorld world,
 
     // Print out the paths
     Node* print_node_ptr;
-    cout << "Solution Path for " << start_node << " -> " << end_node << endl;
+    cout << "Solution Path for " << start_node << " -> " << end_node <<endl;
     while(!node_path.empty()) {
       print_node_ptr = node_path.top();
       cout << "\t" << print_node_ptr << endl;

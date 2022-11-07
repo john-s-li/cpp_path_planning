@@ -1,4 +1,4 @@
 # Path Planning Algorithms in C++
 
-This repository borrows from the algorithms implemented in [PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics) by AtsushiSakai.
+A repository containing all of the path planning algorithms I have implemented in C++.
 
