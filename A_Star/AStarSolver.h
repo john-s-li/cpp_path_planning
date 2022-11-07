@@ -4,6 +4,8 @@
 #include <queue>
 #include <list>
 #include <iostream>
+#include <set>
+#include <stack>
 #include "math.h"
 
 #include "GridWorld.hpp"
@@ -11,12 +13,12 @@
 using namespace std;
 
 class AStarSolver {
-    public:
-        bool search(const GridWorld world, position start, position end);
-        void printPath() const;
-    private:
-        vector<Node*> _visited;
-        vector<Node*> _curr_path;
+  public:
+    bool search(const GridWorld world, const position start, const position end);
+    void printPath(const GridWorld world, const position end) const;
+  private:
+    bool _goal_reached = false;
+    set<Node*> _visited; 
 };
 
 #endif
