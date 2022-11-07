@@ -16,7 +16,7 @@ const int COLS = 10;
 
 const double MAX = numeric_limits<double>::max();
 
-class Node{
+struct Node{
     public: 
         Node(position pos, double g, double h) :
             _position(pos),
@@ -29,6 +29,7 @@ class Node{
         Node* getParent() const { return _parent; }
         position getPosition() const { return _position; }
         pair<double, double> getCosts() const { return make_pair(_g, _h); }
+        double getFCost() const { return _g + _h; }
 
         void setCosts(double cost_g, double cost_h) { 
             _g = cost_g; 
@@ -45,8 +46,8 @@ class Node{
         double _h; // heuristic value
 }; // end Node
 
-ostream& operator<< (ostream& out, const Node& node) {
-  position node_pos = node.getPosition();
+ostream& operator<< (ostream& out, const Node* node) {
+  position node_pos = node->getPosition();
   return out << "(" << node_pos.first << ", " << node_pos.second << ")";
 } // for printing node easier
 
