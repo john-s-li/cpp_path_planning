@@ -78,6 +78,16 @@
         "stop_token": "cpp",
         "__tree": "cpp",
         "set": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "dense": "cpp",
+        "eigenvalues": "cpp",
+        "geometry": "cpp",
+        "svd": "cpp",
+        "cholesky": "cpp",
+        "lu": "cpp",
+        "core": "cpp",
+        "map": "cpp",
+        "__bits": "cpp",
+        "filesystem": "cpp"
     }
 }

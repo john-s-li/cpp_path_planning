@@ -1,8 +1,6 @@
 #ifndef A_STAR_SOLVER_H
 #define A_STAR_SOLVER_H
 
-#include <queue>
-#include <list>
 #include <iostream>
 #include <unordered_set>
 #include <tuple>
@@ -15,6 +13,7 @@ using namespace std;
 
 // priority queue with sorted storage
 typedef tuple<double, Node*> node_with_cost;
+
 class AStarSolver {
   public:
     bool search(const GridWorld world, const position start, const position end);
