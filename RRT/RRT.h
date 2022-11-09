@@ -7,11 +7,13 @@
 #include <memory>
 #include <limits.h>
 #include <string>
+#include <random>
 
 #include <Eigen/Dense>
 #include <matplot/matplot.h>
 
 using namespace std;
+using namespace matplot;
 
 const bool SHOW_ANIMATION = true;
 double INF = numeric_limits<double>::infinity();
@@ -32,6 +34,10 @@ struct Node {
 };
 
 typedef shared_ptr<Node> node_ptr;
+
+ostream& operator<< (ostream& out, const Node* node) {
+  return out << "(" << node->x << ", " << node->y << ")";
+}
 
 struct AreaBounds {
   double x_min = 0.0; 
@@ -86,10 +92,11 @@ class RRT {
     double calc_dist_to_goal(double x, double y);
     node_ptr get_random_node() const;
     void draw_graph(shared_ptr<Node> rnd = nullptr) const;
+
     static void draw_circle(double x, double y, double size, string color);
-    static position get_nearest_node_index(
-                        vector<node_ptr> node_list,
-                        node_ptr rnd_node);
+    static int get_nearest_node_index(
+                  const vector<node_ptr> node_list,
+                  const node_ptr rnd_node);
     static bool check_if_outside_play_area(
                 node_ptr node, shared_ptr<AreaBounds> play_area);
     static bool check_collision(node_ptr node,
