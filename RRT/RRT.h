@@ -8,6 +8,7 @@
 #include <limits.h>
 #include <string>
 #include <random>
+#include <tuple>
 
 #include <Eigen/Dense>
 #include <matplot/matplot.h>
@@ -19,7 +20,8 @@ const bool SHOW_ANIMATION = true;
 double INF = numeric_limits<double>::infinity();
 
 typedef pair<double, double> position;
-typedef vector<vector<double>> obstacle_list;
+typedef tuple<double, double, double> obstacle;
+typedef vector<obstacle> obstacle_list;
 typedef pair<double, double> dist_and_angle;
 
 struct Node {
