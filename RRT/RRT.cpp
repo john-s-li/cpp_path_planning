@@ -107,9 +107,7 @@ bool check_collision(node_ptr node, obstacle_list obs_list, double robot_radius)
       // check smallest distance 
       min_dist = *min_element(d_list.begin(), d_list.end());
       // do circle collision checks
-      if (min_dist <= size - robot_radius || // obstacle in robot
-          min_dist <= robot_radius - size || // robot in obstacle
-          min_dist < size + robot_radius) {  // robot intersects with obs
+      if (min_dist <= size + robot_radius) {  // robot intersects with obs
         return true; // collision
       }
     }
