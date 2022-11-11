@@ -16,13 +16,16 @@
 using namespace std;
 using namespace matplot;
 
+struct Node; // prevent circular dependency
+
 const bool SHOW_ANIMATION = true;
 double INF = numeric_limits<double>::infinity();
 
 typedef pair<double, double> position;
 typedef tuple<double, double, double> obstacle;
 typedef vector<obstacle> obstacle_list;
-typedef pair<double, double> dist_and_angle;
+typedef tuple<double, double> dist_and_angle;
+typedef shared_ptr<Node> node_ptr;
 
 struct Node {
   double x;
@@ -34,8 +37,6 @@ struct Node {
   Node(double x, double y) : 
     x(x), y(y) {}
 };
-
-typedef shared_ptr<Node> node_ptr;
 
 ostream& operator<< (ostream& out, const Node* node) {
   return out << "(" << node->x << ", " << node->y << ")";

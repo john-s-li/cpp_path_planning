@@ -6,7 +6,48 @@ void RRT::plan_rrt(bool animation) {
     node_ptr random_node = get_random_node();
     int nearest_idx = get_nearest_node_index(_node_list, random_node);
     node_ptr nearest_node = _node_list[nearest_idx];
+
+    node_ptr new_node = steer(nearest_node, random_node, _expand_dist);
   }
+}
+
+node_ptr RRT::steer(node_ptr from_node, node_ptr to_node, double extend_length) {
+  // make this as to not alter from_node
+  node_ptr new_node = make_shared<Node>(from_node->x, from_node->y);
+
+  auto [d, theta] = calc_dist_and_angle(new_node, to_node);
+
+  new_node->path_x.push_back(new_node->x);
+  new_node->path_y.push_back(new_node->y);
+
+  if (extend_length > d) {
+    extend_length = d;
+  }
+
+  int num_expansions = floor(extend_length / _path_res);
+
+  for (int i = 0; i < num_expansions; i++) {
+    new_node->x += _path_res * cos(theta);
+    new_node->y += _path_res * sin(theta);
+    new_node->path_x.push_back(new_node->x);
+    new_node->path_y.push_back(new_node->y);
+  }
+
+  // might not be exactly at the to_node so try extending just a wee bit
+  // NOTE: need to check how to re-assign values using this syntax
+  // without making new variables
+  auto [last_d, last_theta] = calc_dist_and_angle(new_node, to_node);
+
+  if (last_d <= _path_res) {
+    new_node->path_x.push_back(new_node->x);
+    new_node->path_y.push_back(new_node->y);
+    new_node->x = to_node->x;
+    new_node->y = to_node->y;
+  }
+
+  new_node->parent = from_node;
+
+  return new_node;
 }
 
 node_ptr RRT::get_random_node() const {
@@ -42,12 +83,12 @@ int RRT::get_nearest_node_index(const vector<node_ptr> node_list,
 }
 
 bool check_if_outside_play_area(node_ptr node, shared_ptr<AreaBounds> play_area) {
-  if(!play_area) return true; // no play area defined
+  if(!play_area) return false; // no play area defined
   if (node->x < play_area->x_min || node->x > play_area->x_max ||
       node->y < play_area->y_min || node->y > play_area->y_max) {
-        return false; // outside = bad
+        return true; // outside = bad
       }
-  return true; 
+  return false; 
 }
 
 bool check_collision(node_ptr node, obstacle_list obs_list, double robot_radius) {
@@ -66,12 +107,21 @@ bool check_collision(node_ptr node, obstacle_list obs_list, double robot_radius)
       // check smallest distance 
       min_dist = *min_element(d_list.begin(), d_list.end());
       if (min_dist < pow(size + robot_radius, 2)) {
-        return false; // collision
+        return true; // collision
       }
     }
-  }s
+  }
 
-  return true;
+  return false;
+}
+
+dist_and_angle RRT::calc_dist_and_angle(node_ptr from_node, node_ptr to_node) {
+  double dx = to_node->x - from_node->x;
+  double dy = to_node->y - from_node->y;
+  double d = sqrt(pow(dx, 2) + pow(dy, 2));
+  double theta = atan2(dy, dx);
+
+  return make_tuple(d, theta);
 }
 
 int main() {
