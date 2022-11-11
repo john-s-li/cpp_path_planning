@@ -92,7 +92,7 @@ bool check_if_outside_play_area(node_ptr node, shared_ptr<AreaBounds> play_area)
 }
 
 bool check_collision(node_ptr node, obstacle_list obs_list, double robot_radius) {
-  if (!node) return false;
+  if (!node) return true; // don't add to node list
 
   vector<double> d_list;
   double min_dist;
@@ -101,12 +101,15 @@ bool check_collision(node_ptr node, obstacle_list obs_list, double robot_radius)
     // calculate distance of node to all obstacles
     // if distance of node to an obstacle is < (robot_radius + size of obs)^2 --> collision
     for(int i = 0; i < node->path_x.size(); i++) {
-      d_list.push_back(pow(ox - node->path_x[i], 2) + 
-                       pow(oy - node->path_y[i], 2));
+      d_list.push_back(sqrt(pow(ox - node->path_x[i], 2) + 
+                            pow(oy - node->path_y[i], 2)));
 
       // check smallest distance 
       min_dist = *min_element(d_list.begin(), d_list.end());
-      if (min_dist < pow(size + robot_radius, 2)) {
+      // do circle collision checks
+      if (min_dist <= size - robot_radius || // obstacle in robot
+          min_dist <= robot_radius - size || // robot in obstacle
+          min_dist < size + robot_radius) {  // robot intersects with obs
         return true; // collision
       }
     }
