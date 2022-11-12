@@ -1,5 +1,7 @@
 #include "RRT.h"
 
+using namespace matplot;
+
 void RRT::plan_rrt(bool animation) {
   _node_list.push_back(_start_node);
   for(int i; i < _max_iters; i++) {
@@ -8,6 +10,15 @@ void RRT::plan_rrt(bool animation) {
     node_ptr nearest_node = _node_list[nearest_idx];
 
     node_ptr new_node = steer(nearest_node, random_node, _expand_dist);
+
+    if (!check_if_outside_play_area(new_node, _play_area) &&
+        !check_collision(new_node, _obs, _robot_radius)) {
+      _node_list.push_back(new_node);
+    }
+
+    if (animation && i % 5 == 0) {
+      draw_graph(random_node);
+    }
   }
 }
 
@@ -70,6 +81,12 @@ node_ptr RRT::get_random_node() const {
   return rand_node;
 }
 
+void RRT::draw_graph(node_ptr rnd_node) const {
+  static auto f = figure();
+  static auto ax = f->current_axes();
+  cla(ax);
+}
+
 int RRT::get_nearest_node_index(const vector<node_ptr> node_list,
                                 const node_ptr rnd_node) {
   vector<double> distances(node_list.size());
@@ -82,7 +99,7 @@ int RRT::get_nearest_node_index(const vector<node_ptr> node_list,
                   min_element(distances.begin(), distances.end()));                                   
 }
 
-bool check_if_outside_play_area(node_ptr node, shared_ptr<AreaBounds> play_area) {
+bool RRT::check_if_outside_play_area(node_ptr node, shared_ptr<AreaBounds> play_area) {
   if(!play_area) return false; // no play area defined
   if (node->x < play_area->x_min || node->x > play_area->x_max ||
       node->y < play_area->y_min || node->y > play_area->y_max) {
@@ -91,7 +108,7 @@ bool check_if_outside_play_area(node_ptr node, shared_ptr<AreaBounds> play_area)
   return false; 
 }
 
-bool check_collision(node_ptr node, obstacle_list obs_list, double robot_radius) {
+bool RRT::check_collision(node_ptr node, obstacle_list obs_list, double robot_radius) {
   if (!node) return true; // don't add to node list
 
   vector<double> d_list;

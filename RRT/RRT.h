@@ -94,7 +94,7 @@ class RRT {
     vector<position> generate_final_course(const position goal_idx);
     double calc_dist_to_goal(double x, double y);
     node_ptr get_random_node() const;
-    void draw_graph(shared_ptr<Node> rnd = nullptr) const;
+    void draw_graph(node_ptr rnd = nullptr) const;
 
     static void draw_circle(double x, double y, double size, string color);
     static int get_nearest_node_index(
