@@ -53,6 +53,10 @@ struct AreaBounds {
     y_min(area[2]), y_max(area[3]) {};
 };
 
+inline double deg2rad(double d) {
+  return M_PI * d / 180.0;
+}
+
 class RRT {
   public:
     RRT(position start, 
@@ -96,7 +100,8 @@ class RRT {
     node_ptr get_random_node() const;
     void draw_graph(node_ptr rnd = nullptr) const;
 
-    static void draw_circle(double x, double y, double size, string color);
+    static void draw_circle(double x, double y, double size, 
+                            string color = "-b");
     static int get_nearest_node_index(
                   const vector<node_ptr> node_list,
                   const node_ptr rnd_node);

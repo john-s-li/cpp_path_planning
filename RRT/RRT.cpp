@@ -1,5 +1,7 @@
 #include "RRT.h"
 
+namespace plt = matplotlibcpp;
+
 void RRT::plan_rrt(bool animation) {
   _node_list.push_back(_start_node);
   for(int i; i < _max_iters; i++) {
@@ -80,7 +82,13 @@ node_ptr RRT::get_random_node() const {
 }
 
 void RRT::draw_graph(node_ptr rnd_node) const {
+  plt::clf();
+  if (rnd_node) {
+    plt::plot(vector<double> {rnd_node->x}, vector<double> {rnd_node->y}, "^k");
+    if (_robot_radius > 0.0) {
 
+    }
+  }
 }
 
 int RRT::get_nearest_node_index(const vector<node_ptr> node_list,
@@ -136,6 +144,26 @@ dist_and_angle RRT::calc_dist_and_angle(node_ptr from_node, node_ptr to_node) {
   double theta = atan2(dy, dx);
 
   return make_tuple(d, theta);
+}
+
+void RRT::draw_circle(double x, double y, double size, string color) {
+  static vector<double> deg(360/5);
+  static bool deg_init = false;
+  generate(deg.begin(), deg.end(),
+           [n = 0] () mutable {return n++; });
+  if (!deg_init) {
+    deg.push_back(0);
+    deg_init = true;
+  }
+
+  vector<double> x_circle;
+  vector<double> y_circle;
+
+  for(auto d: deg) {
+    x_circle.push_back(x + size * cos(deg2rad(d)));
+    y_circle.push_back(y + size * sin(deg2rad(d)));
+  }
+  plt::plot(x_circle, y_circle, color);
 }
 
 int main() {
