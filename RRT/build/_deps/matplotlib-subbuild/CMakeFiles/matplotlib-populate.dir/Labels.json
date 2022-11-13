@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/johnathon_s_li/Desktop/Projects/cpp_path_planning/RRT/build/_deps/matplotlib-subbuild/CMakeFiles/matplotlib-populate"
+		},
+		{
+			"file" : "/Users/johnathon_s_li/Desktop/Projects/cpp_path_planning/RRT/build/_deps/matplotlib-subbuild/CMakeFiles/matplotlib-populate.rule"
+		},
+		{
+			"file" : "/Users/johnathon_s_li/Desktop/Projects/cpp_path_planning/RRT/build/_deps/matplotlib-subbuild/CMakeFiles/matplotlib-populate-complete.rule"
+		},
+		{
+			"file" : "/Users/johnathon_s_li/Desktop/Projects/cpp_path_planning/RRT/build/_deps/matplotlib-subbuild/matplotlib-populate-prefix/src/matplotlib-populate-stamp/matplotlib-populate-build.rule"
+		},
+		{
+			"file" : "/Users/johnathon_s_li/Desktop/Projects/cpp_path_planning/RRT/build/_deps/matplotlib-subbuild/matplotlib-populate-prefix/src/matplotlib-populate-stamp/matplotlib-populate-configure.rule"
+		},
+		{
+			"file" : "/Users/johnathon_s_li/Desktop/Projects/cpp_path_planning/RRT/build/_deps/matplotlib-subbuild/matplotlib-populate-prefix/src/matplotlib-populate-stamp/matplotlib-populate-download.rule"
+		},
+		{
+			"file" : "/Users/johnathon_s_li/Desktop/Projects/cpp_path_planning/RRT/build/_deps/matplotlib-subbuild/matplotlib-populate-prefix/src/matplotlib-populate-stamp/matplotlib-populate-install.rule"
+		},
+		{
+			"file" : "/Users/johnathon_s_li/Desktop/Projects/cpp_path_planning/RRT/build/_deps/matplotlib-subbuild/matplotlib-populate-prefix/src/matplotlib-populate-stamp/matplotlib-populate-mkdir.rule"
+		},
+		{
+			"file" : "/Users/johnathon_s_li/Desktop/Projects/cpp_path_planning/RRT/build/_deps/matplotlib-subbuild/matplotlib-populate-prefix/src/matplotlib-populate-stamp/matplotlib-populate-patch.rule"
+		},
+		{
+			"file" : "/Users/johnathon_s_li/Desktop/Projects/cpp_path_planning/RRT/build/_deps/matplotlib-subbuild/matplotlib-populate-prefix/src/matplotlib-populate-stamp/matplotlib-populate-test.rule"
+		},
+		{
+			"file" : "/Users/johnathon_s_li/Desktop/Projects/cpp_path_planning/RRT/build/_deps/matplotlib-subbuild/matplotlib-populate-prefix/src/matplotlib-populate-stamp/matplotlib-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"matplotlib-populate"
+		],
+		"name" : "matplotlib-populate"
+	}
+}

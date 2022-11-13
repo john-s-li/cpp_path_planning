@@ -4,7 +4,7 @@
 # compile CXX with /Library/Developer/CommandLineTools/usr/bin/c++
 CXX_DEFINES = -DMATPLOT_BUILD_HIGH_RESOLUTION_WORLD_MAP -DNOMINMAX
 
-CXX_INCLUDES = -isystem /opt/homebrew/include -isystem /opt/homebrew/include/eigen3
+CXX_INCLUDES = -isystem /Users/johnathon_s_li/Desktop/Projects/cpp_path_planning/RRT/build/_deps/matplotlib-src -isystem /opt/homebrew/include -isystem /opt/homebrew/include/eigen3 -isystem /opt/homebrew/lib/python3.10/site-packages/numpy/core/include -isystem /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10
 
 CXX_FLAGSarm64 =  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
 

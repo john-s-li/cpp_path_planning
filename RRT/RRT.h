@@ -11,10 +11,10 @@
 #include <tuple>
 
 #include <Eigen/Dense>
-#include <matplot/matplot.h>
+// #include <matplot/matplot.h>
+#include "matplotlibcpp.h"
 
 using namespace std;
-using namespace matplot;
 
 struct Node; // prevent circular dependency
 

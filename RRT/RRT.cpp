@@ -1,7 +1,5 @@
 #include "RRT.h"
 
-using namespace matplot;
-
 void RRT::plan_rrt(bool animation) {
   _node_list.push_back(_start_node);
   for(int i; i < _max_iters; i++) {
@@ -82,9 +80,7 @@ node_ptr RRT::get_random_node() const {
 }
 
 void RRT::draw_graph(node_ptr rnd_node) const {
-  static auto f = figure();
-  static auto ax = f->current_axes();
-  cla(ax);
+
 }
 
 int RRT::get_nearest_node_index(const vector<node_ptr> node_list,
