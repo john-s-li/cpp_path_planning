@@ -95,11 +95,12 @@ class RRT {
     void plan_rrt(bool animation = SHOW_ANIMATION);
     node_ptr steer(node_ptr from_node, node_ptr to_node,
                    double extend_length = INF);
-    vector<position> generate_final_course(const position goal_idx);
-    double calc_dist_to_goal(double x, double y);
+    void generate_final_course(int goal_idx);
+    double calc_dist_to_goal(double x, double y) const;
     node_ptr get_random_node() const;
     void draw_graph(node_ptr rnd = nullptr) const;
-
+    vector<position> get_final_path() const { return _final_path; }
+ 
     static void draw_circle(double x, double y, double size, 
                             string color = "-b");
     static int get_nearest_node_index(
@@ -129,6 +130,7 @@ class RRT {
     double _min_rand; // random sampling area [min, max]
     double _max_rand;
     vector<node_ptr> _node_list;
+    vector<position> _final_path;
 };
 
 #endif

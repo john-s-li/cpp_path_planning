@@ -13,13 +13,32 @@ void RRT::plan_rrt(bool animation) {
 
     if (!check_if_outside_play_area(new_node, _play_area) &&
         !check_collision(new_node, _obs, _robot_radius)) {
-      _node_list.push_back(new_node);
+      _node_list.push_back(new_node); 
     }
 
     if (animation && i % 5 == 0) {
       draw_graph(random_node);
     }
+
+    if (calc_dist_to_goal(_node_list.back()->x, _node_list.back()->y)
+        <= _expand_dist) {
+      node_ptr final_node = steer(_node_list.back(), _end_node, _expand_dist);
+
+      if (!check_collision(final_node, _obs, _robot_radius)) {
+        generate_final_course(_node_list.size() - 1);
+      }
+    }
   }
+}
+
+void RRT::generate_final_course(int goal_idx) {
+  _final_path.push_back(make_pair(_end_node->x, _end_node->y));
+  node_ptr node = _node_list[goal_idx];
+  while (node->parent) {
+    _final_path.push_back(make_pair(node->x, node->y));
+    node = node->parent;
+  }
+  _final_path.push_back(make_pair(node->x, node->y));
 }
 
 node_ptr RRT::steer(node_ptr from_node, node_ptr to_node, double extend_length) {
@@ -61,6 +80,10 @@ node_ptr RRT::steer(node_ptr from_node, node_ptr to_node, double extend_length) 
   return new_node;
 }
 
+double RRT::calc_dist_to_goal(double x, double y) const {
+  return sqrt(pow(x - _end_node->x, 2) + pow(y - _end_node->y, 2));
+}
+
 node_ptr RRT::get_random_node() const {
   random_device rd; // random number from hardware
   mt19937 gen(rd()); // see the generator
@@ -86,9 +109,32 @@ void RRT::draw_graph(node_ptr rnd_node) const {
   if (rnd_node) {
     plt::plot(vector<double> {rnd_node->x}, vector<double> {rnd_node->y}, "^k");
     if (_robot_radius > 0.0) {
-
+      draw_circle(rnd_node->x, rnd_node->y, _robot_radius, "-r");
     }
   }
+
+  for (const auto &node: _node_list) {
+    if (node->parent) {
+      plt::plot(node->path_x, node->path_y, "-g");
+    }
+  }
+
+  for (const auto &ob: _obs) {
+    auto [ox, oy, size] = ob;
+    draw_circle(ox, oy, size);
+  }
+
+  plt::plot(vector<double>{_start_node->x}, 
+            vector<double>{_start_node->y}, "xr");
+  
+  plt::plot(vector<double>{_end_node->x}, 
+            vector<double>{_end_node->y}, "xr");
+  
+  plt::axis("equal");
+  plt::xlim(-2, 15);
+  plt::ylim(-2, 15);
+  plt::grid(true);
+  plt::pause(0.01);
 }
 
 int RRT::get_nearest_node_index(const vector<node_ptr> node_list,
@@ -149,9 +195,9 @@ dist_and_angle RRT::calc_dist_and_angle(node_ptr from_node, node_ptr to_node) {
 void RRT::draw_circle(double x, double y, double size, string color) {
   static vector<double> deg(360/5);
   static bool deg_init = false;
-  generate(deg.begin(), deg.end(),
-           [n = 0] () mutable {return n++; });
   if (!deg_init) {
+    generate(deg.begin(), deg.end(),
+            [n = 0] () mutable {return n++; });
     deg.push_back(0);
     deg_init = true;
   }
