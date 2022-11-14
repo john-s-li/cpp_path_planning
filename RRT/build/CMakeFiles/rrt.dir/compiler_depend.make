@@ -234,205 +234,12 @@ CMakeFiles/rrt.dir/rrt.cpp.o: /Users/johnathon_s_li/Desktop/Projects/cpp_path_pl
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/random \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/cmath \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/numeric \
-  /opt/homebrew/include/eigen3/Eigen/Dense \
-  /opt/homebrew/include/eigen3/Eigen/Core \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/util/Macros.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/util/ConfigureVectorization.h \
-  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/arm_neon.h \
-  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/arm_fp16.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/complex \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/sstream \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/util/MKL_support.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/array \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/util/Constants.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/util/Meta.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/util/StaticAssert.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/util/XprHelper.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/util/Memory.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/util/IntegralConstant.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/util/SymbolicIndex.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/NumTraits.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/MathFunctions.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/GenericPacketMath.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/MathFunctionsImpl.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/arch/Default/ConjHelper.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/arch/Default/Half.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/arch/Default/BFloat16.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/arch/Default/TypeCasting.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctionsFwd.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/arch/NEON/PacketMath.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/arch/NEON/TypeCasting.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/arch/NEON/MathFunctions.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/arch/NEON/Complex.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/arch/Default/Settings.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctions.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/functors/TernaryFunctors.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/functors/BinaryFunctors.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/functors/UnaryFunctors.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/functors/NullaryFunctors.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/functors/StlFunctors.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/functors/AssignmentFunctors.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/util/IndexedViewHelper.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/util/ReshapedHelper.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/ArithmeticSequence.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/IO.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/DenseBase.h \
-  /opt/homebrew/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h \
-  /opt/homebrew/include/eigen3/Eigen/src/plugins/BlockMethods.h \
-  /opt/homebrew/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h \
-  /opt/homebrew/include/eigen3/Eigen/src/plugins/ReshapedMethods.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/MatrixBase.h \
-  /opt/homebrew/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h \
-  /opt/homebrew/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
-  /opt/homebrew/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/EigenBase.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/Product.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/CoreEvaluators.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/AssignEvaluator.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/Assign.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/ArrayBase.h \
-  /opt/homebrew/include/eigen3/Eigen/src/plugins/ArrayCwiseUnaryOps.h \
-  /opt/homebrew/include/eigen3/Eigen/src/plugins/ArrayCwiseBinaryOps.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/util/BlasUtil.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/DenseStorage.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/NestByValue.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/ReturnByValue.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/NoAlias.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/PlainObjectBase.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/Matrix.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/Array.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/CwiseTernaryOp.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/CwiseBinaryOp.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/CwiseUnaryOp.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/CwiseNullaryOp.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/CwiseUnaryView.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/SelfCwiseBinaryOp.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/Dot.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/StableNorm.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/Stride.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/MapBase.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/Map.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/Ref.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/Block.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/VectorBlock.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/IndexedView.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/Reshaped.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/Transpose.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/DiagonalMatrix.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/Diagonal.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/DiagonalProduct.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/Redux.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/Visitor.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/Fuzzy.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/Swap.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/CommaInitializer.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/GeneralProduct.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/Solve.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/Inverse.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/SolverBase.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/PermutationMatrix.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/Transpositions.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/TriangularMatrix.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/SelfAdjointView.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/products/GeneralBlockPanelKernel.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/products/Parallelizer.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/ProductEvaluators.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/products/GeneralMatrixVector.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrix.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/SolveTriangular.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixVector.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixMatrix.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/products/SelfadjointProduct.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/products/SelfadjointRank2Update.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/products/TriangularMatrixVector.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/products/TriangularMatrixMatrix.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/products/TriangularSolverMatrix.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/products/TriangularSolverVector.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/BandMatrix.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/CoreIterators.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/ConditionEstimator.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/arch/NEON/GeneralBlockPanelKernel.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/BooleanRedux.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/Select.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/VectorwiseOp.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/PartialReduxEvaluator.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/Random.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/Replicate.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/Reverse.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/ArrayWrapper.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/StlIterators.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/GlobalFunctions.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h \
-  /opt/homebrew/include/eigen3/Eigen/LU \
-  /opt/homebrew/include/eigen3/Eigen/src/misc/Kernel.h \
-  /opt/homebrew/include/eigen3/Eigen/src/misc/Image.h \
-  /opt/homebrew/include/eigen3/Eigen/src/LU/FullPivLU.h \
-  /opt/homebrew/include/eigen3/Eigen/src/LU/PartialPivLU.h \
-  /opt/homebrew/include/eigen3/Eigen/src/LU/Determinant.h \
-  /opt/homebrew/include/eigen3/Eigen/src/LU/InverseImpl.h \
-  /opt/homebrew/include/eigen3/Eigen/src/LU/arch/InverseSize4.h \
-  /opt/homebrew/include/eigen3/Eigen/Cholesky \
-  /opt/homebrew/include/eigen3/Eigen/Jacobi \
-  /opt/homebrew/include/eigen3/Eigen/src/Jacobi/Jacobi.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Cholesky/LLT.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Cholesky/LDLT.h \
-  /opt/homebrew/include/eigen3/Eigen/QR \
-  /opt/homebrew/include/eigen3/Eigen/Householder \
-  /opt/homebrew/include/eigen3/Eigen/src/Householder/Householder.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Householder/HouseholderSequence.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Householder/BlockHouseholder.h \
-  /opt/homebrew/include/eigen3/Eigen/src/QR/HouseholderQR.h \
-  /opt/homebrew/include/eigen3/Eigen/src/QR/FullPivHouseholderQR.h \
-  /opt/homebrew/include/eigen3/Eigen/src/QR/ColPivHouseholderQR.h \
-  /opt/homebrew/include/eigen3/Eigen/src/QR/CompleteOrthogonalDecomposition.h \
-  /opt/homebrew/include/eigen3/Eigen/SVD \
-  /opt/homebrew/include/eigen3/Eigen/src/misc/RealSvd2x2.h \
-  /opt/homebrew/include/eigen3/Eigen/src/SVD/UpperBidiagonalization.h \
-  /opt/homebrew/include/eigen3/Eigen/src/SVD/SVDBase.h \
-  /opt/homebrew/include/eigen3/Eigen/src/SVD/JacobiSVD.h \
-  /opt/homebrew/include/eigen3/Eigen/src/SVD/BDCSVD.h \
-  /opt/homebrew/include/eigen3/Eigen/Geometry \
-  /opt/homebrew/include/eigen3/Eigen/src/Geometry/OrthoMethods.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Geometry/EulerAngles.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Geometry/Homogeneous.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Geometry/RotationBase.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Geometry/Rotation2D.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Geometry/Quaternion.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Geometry/AngleAxis.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Geometry/Transform.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Geometry/Translation.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Geometry/Scaling.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Geometry/Hyperplane.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Geometry/ParametrizedLine.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Geometry/AlignedBox.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Geometry/Umeyama.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Geometry/arch/Geometry_SIMD.h \
-  /opt/homebrew/include/eigen3/Eigen/Eigenvalues \
-  /opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/ComplexEigenSolver.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
-  /opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
   _deps/matplotlib-src/matplotlibcpp.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/map \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__tree \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__node_handle \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/optional \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/array \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/unordered_map \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__hash_table \
   /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/Python.h \
@@ -567,37 +374,27 @@ CMakeFiles/rrt.dir/rrt.cpp.o: /Users/johnathon_s_li/Desktop/Projects/cpp_path_pl
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/signal.h
 
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/setjmp.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/signal.h:
+
+/opt/homebrew/lib/python3.10/site-packages/numpy/core/include/numpy/npy_interrupt.h:
 
 /opt/homebrew/lib/python3.10/site-packages/numpy/core/include/numpy/_neighborhood_iterator_imp.h:
 
 /opt/homebrew/lib/python3.10/site-packages/numpy/core/include/numpy/utils.h:
 
-/opt/homebrew/lib/python3.10/site-packages/numpy/core/include/numpy/npy_endian.h:
-
 /opt/homebrew/lib/python3.10/site-packages/numpy/core/include/numpy/_numpyconfig.h:
-
-/opt/homebrew/lib/python3.10/site-packages/numpy/core/include/numpy/numpyconfig.h:
-
-/opt/homebrew/lib/python3.10/site-packages/numpy/core/include/numpy/npy_common.h:
 
 /opt/homebrew/lib/python3.10/site-packages/numpy/core/include/numpy/ndarraytypes.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/fileutils.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/fileutils.h:
-
 /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pystrcmp.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pystrtod.h:
 
 /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/eval.h:
 
 /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/import.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/sysmodule.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/osmodule.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/sysmodule.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/sysmodule.h:
 
 /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/ceval.h:
 
@@ -605,35 +402,23 @@ CMakeFiles/rrt.dir/rrt.cpp.o: /Users/johnathon_s_li/Desktop/Projects/cpp_path_pl
 
 /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pylifecycle.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/pythonrun.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pythonrun.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/compile.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/compile.h:
 
 /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/context.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pythread.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/pyerrors.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pyerrors.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/pytime.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/codecs.h:
 
 /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/picklebufobject.h:
 
 /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/weakrefobject.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/genericaliasobject.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/descrobject.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/abstract.h:
-
 /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pystate.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/genobject.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/initconfig.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/traceback.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/descrobject.h:
 
 /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pyframe.h:
 
@@ -641,541 +426,195 @@ CMakeFiles/rrt.dir/rrt.cpp.o: /Users/johnathon_s_li/Desktop/Projects/cpp_path_pl
 
 /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/code.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pycapsule.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/pystate.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/fileobject.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/fileobject.h:
 
 /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/classobject.h:
 
 /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/funcobject.h:
 
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/dictobject.h:
+
 /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/moduleobject.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/signal.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/listobject.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/methodobject.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/setobject.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/enumobject.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/memoryobject.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/tupleobject.h:
 
 /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/floatobject.h:
 
 /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/boolobject.h:
 
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/structseq.h:
+
 /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/longobject.h:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/bltinmodule.h:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/unicodeobject.h:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/unicodeobject.h:
 
 /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/bytesobject.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/warnings.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/bytesobject.h:
-
 /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/bytearrayobject.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/pydebug.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/iterobject.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pyhash.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/bytearrayobject.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/typeslots.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/objimpl.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/objimpl.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/warnings.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pymem.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/pymem.h:
 
 /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/exports.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/stat.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_timeval64.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/time.h:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/pydebug.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/xlocale/_inttypes.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/inttypes.h:
-
-/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/inttypes.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pyport.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/pyfpe.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/inttypes.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/gethostuuid.h:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/odictobject.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_uuid_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_select.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/select.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_posix_vdisable.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/unistd.h:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/object.h:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pyconfig.h:
 
 /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/patchlevel.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/Python.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/optional:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__node_handle:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__tree:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/map:
-
-_deps/matplotlib-src/matplotlibcpp.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/pylifecycle.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h:
-
-/opt/homebrew/include/eigen3/Eigen/Eigenvalues:
-
-/opt/homebrew/include/eigen3/Eigen/src/Geometry/arch/Geometry_SIMD.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Geometry/Umeyama.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Geometry/AlignedBox.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pythonrun.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Geometry/Scaling.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Geometry/Translation.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Geometry/Transform.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Geometry/Quaternion.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Geometry/Homogeneous.h:
-
-/opt/homebrew/include/eigen3/Eigen/Geometry:
-
-/opt/homebrew/include/eigen3/Eigen/src/SVD/BDCSVD.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/SVD/SVDBase.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/unicodeobject.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/QR/CompleteOrthogonalDecomposition.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/compile.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/ComplexEigenSolver.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Householder/BlockHouseholder.h:
-
-/opt/homebrew/include/eigen3/Eigen/QR:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/object.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Cholesky/LDLT.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Cholesky/LLT.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/Diagonal.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixMatrix.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Jacobi/Jacobi.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/LU/arch/InverseSize4.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/LU/InverseImpl.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/LU/FullPivLU.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/namespaceobject.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/longintrepr.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Geometry/ParametrizedLine.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/misc/Image.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_wchar_t.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/GlobalFunctions.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/wctype.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/Reverse.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/VectorwiseOp.h:
-
-/opt/homebrew/lib/python3.10/site-packages/numpy/core/include/numpy/npy_interrupt.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/BooleanRedux.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/Select.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/ConditionEstimator.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/unordered_map:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/BandMatrix.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/products/TriangularSolverMatrix.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/products/SelfadjointRank2Update.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/tupleobject.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_nlink_t.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/products/SelfadjointMatrixVector.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrix.h:
-
-/opt/homebrew/include/eigen3/Eigen/SVD:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/errno.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/TriangularMatrix.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/setjmp.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/stdint.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/Transpositions.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/stdio.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/Inverse.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/Solve.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/products/GeneralMatrixVector.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/Fuzzy.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/xlocale/_string.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/Visitor.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/libkern/arm/OSByteOrder.h:
-
-/opt/homebrew/include/eigen3/Eigen/Dense:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/DiagonalProduct.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/dictobject.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/DenseStorage.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/Reshaped.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/pymem.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/typeinfo:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/IndexedView.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/arm/signal.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/MapBase.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/Dot.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Geometry/RotationBase.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/errno.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/products/TriangularMatrixMatrix.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/SelfCwiseBinaryOp.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_symbol_aliasing.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/CwiseNullaryOp.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/ProductEvaluators.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/CwiseTernaryOp.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/PlainObjectBase.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/NoAlias.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/util/BlasUtil.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/Assign.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/plugins/BlockMethods.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/MatrixBase.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__tuple:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/nl_types.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/plugins/ReshapedMethods.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Householder/HouseholderSequence.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h:
-
-/opt/homebrew/lib/python3.10/site-packages/numpy/core/include/numpy/arrayobject.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__errc:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/IO.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/plugins/ArrayCwiseBinaryOps.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/ArithmeticSequence.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Geometry/OrthoMethods.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/util/ReshapedHelper.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_fsfilcnt_t.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/Array.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/limits.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/util/IndexedViewHelper.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/functors/AssignmentFunctors.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/GeneralProduct.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/math.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/_types/_intmax_t.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/functors/TernaryFunctors.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctions.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/modsupport.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/odictobject.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/arch/Default/Settings.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/locale:
-
-/opt/homebrew/include/eigen3/Eigen/src/misc/Kernel.h:
-
-/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/arm_fp16.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/arch/NEON/Complex.h:
-
-/opt/homebrew/include/eigen3/Eigen/Jacobi:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/objimpl.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pymacro.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/arch/NEON/MathFunctions.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/locale.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/pthread.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/ReturnByValue.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/pyctype.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctionsFwd.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/Block.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/MathFunctionsImpl.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/MathFunctions.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/abstract.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Householder/Householder.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/util/IntegralConstant.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/util/Memory.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/PermutationMatrix.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/util/StaticAssert.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/CwiseUnaryOp.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_fsblkcnt_t.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/util/Constants.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/utility:
-
-/opt/homebrew/include/eigen3/Eigen/Householder:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/complexobject.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/signal.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/util/MKL_support.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/sstream:
-
-/opt/homebrew/include/eigen3/Eigen/src/QR/HouseholderQR.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/complex:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/errno.h:
-
-/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/arm_neon.h:
-
-/opt/homebrew/include/eigen3/Eigen/Cholesky:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/util/ForwardDeclarations.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/util/Macros.h:
-
-/opt/homebrew/include/eigen3/Eigen/Core:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pyport.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/numeric:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/SolveTriangular.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cellobject.h:
 
-/opt/homebrew/lib/python3.10/site-packages/numpy/core/include/numpy/__multiarray_api.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/complexobject.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/cmath:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/products/GeneralBlockPanelKernel.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/modsupport.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_seek_set.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/random:
 
-/opt/homebrew/include/eigen3/Eigen/src/LU/PartialPivLU.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__bsd_locale_defaults.h:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/tupleobject.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/_types/_nl_item.h:
 
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/listobject.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/inttypes.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_fd_isset.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/QR/FullPivHouseholderQR.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/traceback.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_fd_zero.h:
 
+/opt/homebrew/lib/python3.10/site-packages/numpy/core/include/numpy/ndarrayobject.h:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/pytime.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_fd_clr.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_fd_set.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/SolverBase.h:
-
-/opt/homebrew/lib/python3.10/site-packages/numpy/core/include/numpy/npy_cpu.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/setjmp.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_fd_setsize.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Geometry/Hyperplane.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_fd_def.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_nlink_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_key_t.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/arch/NEON/TypeCasting.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/arch/Default/TypeCasting.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/AvailabilityInternal.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/rangeobject.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_ino64_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_ino_t.h:
 
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/enumobject.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_in_port_t.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/functors/NullaryFunctors.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/CwiseUnaryView.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/abstract.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_in_addr_t.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_useconds_t.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_s_ifmt.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/structseq.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_useconds_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_gid_t.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/listobject.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/tupleobject.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/DenseBase.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/Python.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_blksize_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_blkcnt_t.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/vector:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/Redux.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/arm/types.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_caddr_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_u_int.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_filesec_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_fsfilcnt_t.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_u_char.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cellobject.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/optional:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/util/Meta.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/system_error:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/types.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/products/TriangularSolverVector.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/nl_types.h:
+
+/opt/homebrew/lib/python3.10/site-packages/numpy/core/include/numpy/npy_cpu.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/cstdio:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/ostream:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_ssize_t.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pythread.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/istream:
 
-/opt/homebrew/include/eigen3/Eigen/src/misc/RealSvd2x2.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/fileobject.h:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/typeslots.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/streambuf:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/CommaInitializer.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Geometry/Rotation2D.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/methodobject.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/locale.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/xlocale/_stdlib.h:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/setobject.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_mbstate_t.h:
 
@@ -1185,41 +624,35 @@ _deps/matplotlib-src/matplotlibcpp.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/runetype.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pymath.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/xlocale.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/_types/_uint16_t.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/GenericPacketMath.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/xlocale/_string.h:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/traceback.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/arm/signal.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/cerrno:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/cwchar:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/machine/_types.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/functional:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_seek_set.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/assert.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/Ref.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/Random.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/Map.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/_types/_uint64_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/cassert:
 
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/initconfig.h:
+
 /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/stdarg.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_mach_port_t.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pymacconfig.h:
+/opt/homebrew/lib/python3.10/site-packages/numpy/core/include/numpy/__multiarray_api.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_pthread/_pthread_rwlockattr_t.h:
 
@@ -1227,25 +660,23 @@ _deps/matplotlib-src/matplotlibcpp.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_dev_t.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/errno.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__hash_table:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_int8_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/xlocale/_wchar.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/Stride.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/typeinfo:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/errno.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/arm/_limits.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_pthread/_pthread_key_t.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/methodobject.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/mutex:
-
-/opt/homebrew/include/eigen3/Eigen/src/Geometry/AngleAxis.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/SelfAdjointView.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__debug:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/arm/limits.h:
 
@@ -1253,47 +684,29 @@ _deps/matplotlib-src/matplotlibcpp.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/machine/limits.h:
 
-/opt/homebrew/include/eigen3/Eigen/LU:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/machine/signal.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/Transpose.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/string_view:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/limits.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/bitset:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/pthread/qos.h:
 
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/genericaliasobject.h:
+
 /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/limits.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/arch/Default/ConjHelper.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_ct_rune_t.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/ratio:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/util/SymbolicIndex.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/cstddef:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_pthread/_pthread_t.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_s_ifmt.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/ctime:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_timespec.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_ucontext.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/unistd.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/atomic:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/malloc/_malloc.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/tuple:
 
@@ -1301,19 +714,13 @@ _deps/matplotlib-src/matplotlibcpp.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/xlocale/_time.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/ArrayWrapper.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/cstdlib:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__threading_support:
 
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pymem.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/exception:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/iosfwd:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/Product.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_mode_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__undef_macros:
 
@@ -1329,27 +736,17 @@ _deps/matplotlib-src/matplotlibcpp.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/wchar.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/inttypes.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/cstdint:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/_stdio.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__tuple:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/VectorBlock.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/stdio.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/strings.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/bytearrayobject.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/syslimits.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_sigaltstack.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_rsize_t.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_posix_availability.h:
 
@@ -1357,33 +754,29 @@ _deps/matplotlib-src/matplotlibcpp.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_pthread/_pthread_cond_t.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/QR/ColPivHouseholderQR.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/_ctermid.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/cstring:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/tracemalloc.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__errc:
+
+/opt/homebrew/lib/python3.10/site-packages/numpy/core/include/numpy/npy_common.h:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/dictobject.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_int32_t.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__hash_table:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/new:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__locale:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/compile.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/_ctype.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/ctype.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/ctype.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/string:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/arch/Default/Half.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/wait.h:
 
@@ -1392,6 +785,8 @@ _deps/matplotlib-src/matplotlibcpp.h:
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/_types/_wctype_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/xlocale/_wctype.h:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/tracemalloc.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/qos.h:
 
@@ -1403,59 +798,47 @@ _deps/matplotlib-src/matplotlibcpp.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_time_t.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/StlIterators.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/rangeobject.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/select.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_u_int64_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/time.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/functors/UnaryFunctors.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/import.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/_stdio.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/stddef.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/pthread/pthread_impl.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_pthread/_pthread_once_t.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/fileobject.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/bit:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_pthread/_pthread_condattr_t.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/plugins/ArrayCwiseUnaryOps.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/_types/_intmax_t.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/stdio.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/pylifecycle.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_pid_t.h:
 
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/pythonrun.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/ios:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/codecs.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_uintptr_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/iostream:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/PartialReduxEvaluator.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/limits:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/xlocale/__wctype.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_symbol_aliasing.h:
 
 /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/stddef.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/AssignEvaluator.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/arch/Default/BFloat16.h:
+/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/inttypes.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_timeval.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__bit_reference:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/iosfwd:
 
 /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/__stddef_max_align_t.h:
 
@@ -1467,113 +850,123 @@ _deps/matplotlib-src/matplotlibcpp.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/wctype.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/import.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_va_list.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/arch/NEON/GeneralBlockPanelKernel.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/errno.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_errno_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/algorithm:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/AvailabilityVersions.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/sliceobject.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/version:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_fsblkcnt_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_fd_set.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/arm/_mcontext.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/system_error:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_int16_t.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/cctype:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/longintrepr.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/arch/NEON/PacketMath.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/malloc/_malloc.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/wctype.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/setjmp.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_u_int32_t.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/ArrayBase.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/sliceobject.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/traceback.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/object.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_wchar_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/string.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/arm/types.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_rune_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/_types/_uint32_t.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pyconfig.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/limits.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/cdefs.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/NestByValue.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pyhash.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/functors/BinaryFunctors.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pymacro.h:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/arm/_types.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pymacconfig.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/functors/StlFunctors.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/libkern/arm/OSByteOrder.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/SVD/JacobiSVD.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/CwiseBinaryOp.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/stdio.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/cwctype:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/libkern/_OSByteOrder.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/products/Parallelizer.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/bltinmodule.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_endian.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/dictobject.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/arm/endian.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/NumTraits.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/fileutils.h:
 
 /Users/johnathon_s_li/Desktop/Projects/cpp_path_planning/RRT/RRT.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/machine/endian.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/Replicate.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/math.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__mutex_base:
 
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/pthread/sched.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/syslimits.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/util/ConfigureVectorization.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/pthread/sched.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/_types/_uint8_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/stdint.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/Swap.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/sysmodule.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/machine/types.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_pthread/_pthread_mutex_t.h:
 
+/opt/homebrew/lib/python3.10/site-packages/numpy/core/include/numpy/npy_endian.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/climits:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/appleapiopts.h:
 
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/genobject.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__split_buffer:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_va_list.h:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/object.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/cctype:
 
 /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/stdint.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/StableNorm.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/methodobject.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/utility:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_ssize_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/stdexcept:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/intrcheck.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/stdint.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_timeval64.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/unordered_map:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/xlocale/_ctype.h:
 
@@ -1581,87 +974,115 @@ _deps/matplotlib-src/matplotlibcpp.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_null.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/math.h:
+
+_deps/matplotlib-src/matplotlibcpp.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/machine/_types.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_size_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_sigset_t.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/unicodeobject.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/unistd.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_intptr_t.h:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/bytesobject.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/_types/_uintmax_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_int64_t.h:
 
+/opt/homebrew/lib/python3.10/site-packages/numpy/core/include/numpy/arrayobject.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/mach/arm/_structs.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/pthread/pthread_impl.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_pthread/_pthread_types.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/LU/Determinant.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/osmodule.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_mode_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_u_int8_t.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/CoreEvaluators.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_posix_vdisable.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_ct_rune_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/arm/arch.h:
 
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/memoryobject.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_uintptr_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/vector:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/string.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/listobject.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/SVD/UpperBidiagonalization.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/pthread.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/products/SelfadjointProduct.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pymath.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/string:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/machine/_mcontext.h:
 
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/objimpl.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/map:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_clock_t.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/Matrix.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_filesec_t.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/version:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_u_int16_t.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Geometry/EulerAngles.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pystrtod.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__nullptr:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/locale:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__string:
+
+/opt/homebrew/lib/python3.10/site-packages/numpy/core/include/numpy/numpyconfig.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/machine/signal.h:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pyerrors.h:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/pystate.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_pthread/_pthread_attr_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/mach/machine/_structs.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/CoreIterators.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/AvailabilityVersions.h:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/abstract.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_pthread/_pthread_mutexattr_t.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/signal.h:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/fileutils.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_id_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/arm/_types.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_timespec.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/stdlib.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/_pthread/_pthread_rwlock_t.h:
 
-/opt/homebrew/lib/python3.10/site-packages/numpy/core/include/numpy/ndarrayobject.h:
-
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/intrcheck.h:
-
-/opt/homebrew/include/eigen3/Eigen/src/Core/util/XprHelper.h:
-
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/array:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/stdlib.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/EigenBase.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/AvailabilityInternal.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/wchar.h:
 
@@ -1669,9 +1090,13 @@ _deps/matplotlib-src/matplotlibcpp.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/stdio.h:
 
-/opt/homebrew/include/eigen3/Eigen/src/Core/products/TriangularMatrixVector.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/pyctype.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/xlocale/__wctype.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/alloca.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/locale.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__config:
 
@@ -1679,8 +1104,14 @@ _deps/matplotlib-src/matplotlibcpp.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/_types/_wctrans_t.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/pyerrors.h:
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/cpython/pyfpe.h:
 
-/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/iterobject.h:
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/sys/stat.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__debug:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/namespaceobject.h:
+
+/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/include/python3.10/pycapsule.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/_types.h:

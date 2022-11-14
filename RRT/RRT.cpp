@@ -2,21 +2,40 @@
 
 namespace plt = matplotlibcpp;
 
+// helper function
+int find_min_elem_idx(vector<double> dists) {
+  int min_idx;
+  double min = INF;
+  for(int i = 0; i < dists.size(); i++) {
+    if (dists[i] < min) {
+      min = dists[i];
+      min_idx = i;
+    }
+  }
+
+  return min_idx;
+}
+
 void RRT::plan_rrt(bool animation) {
+  cout << "Start node: " << _start_node << endl;
+  cout << "End node: " << _end_node << endl;
   _node_list.push_back(_start_node);
-  for(int i; i < _max_iters; i++) {
+  for(int i = 0; i < _max_iters; i++) {
     node_ptr random_node = get_random_node();
+    cout << "\nTrying random node: " << random_node << endl;
     int nearest_idx = get_nearest_node_index(_node_list, random_node);
     node_ptr nearest_node = _node_list[nearest_idx];
-
+    cout << "Nearest node : " << nearest_node << endl;
     node_ptr new_node = steer(nearest_node, random_node, _expand_dist);
 
     if (!check_if_outside_play_area(new_node, _play_area) &&
         !check_collision(new_node, _obs, _robot_radius)) {
+      cout << "Adding new node " << new_node << endl;
       _node_list.push_back(new_node); 
     }
 
     if (animation && i % 5 == 0) {
+      cout << "Drawing animation" << endl;
       draw_graph(random_node);
     }
 
@@ -25,7 +44,9 @@ void RRT::plan_rrt(bool animation) {
       node_ptr final_node = steer(_node_list.back(), _end_node, _expand_dist);
 
       if (!check_collision(final_node, _obs, _robot_radius)) {
+        cout << "Final node found!" << endl;
         generate_final_course(_node_list.size() - 1);
+        break;
       }
     }
   }
@@ -98,6 +119,7 @@ node_ptr RRT::get_random_node() const {
   }
   else {
     // goal node sampling
+    cout << "Sampling goal node" << endl;
     rand_node = _end_node;
   }
 
@@ -134,19 +156,19 @@ void RRT::draw_graph(node_ptr rnd_node) const {
   plt::xlim(-2, 15);
   plt::ylim(-2, 15);
   plt::grid(true);
-  plt::pause(0.01);
+  plt::pause(0.02);
 }
 
 int RRT::get_nearest_node_index(const vector<node_ptr> node_list,
                                 const node_ptr rnd_node) {
   vector<double> distances(node_list.size());
-  for (auto node: node_list) {
-    distances.push_back(pow(node->x - rnd_node->x, 2) +
-                        pow(node->y - rnd_node->y, 2));
+  for (int i = 0; i < node_list.size(); i++) {
+    distances[i] = (pow(node_list[i]->x - rnd_node->x, 2) + 
+                    pow(node_list[i]->y - rnd_node->y, 2));
   }        
 
-  return distance(distances.begin(), 
-                  min_element(distances.begin(), distances.end()));                                   
+  int min_idx = find_min_elem_idx(distances);
+  return min_idx;                                  
 }
 
 bool RRT::check_if_outside_play_area(node_ptr node, shared_ptr<AreaBounds> play_area) {
@@ -175,6 +197,7 @@ bool RRT::check_collision(node_ptr node, obstacle_list obs_list, double robot_ra
       min_dist = *min_element(d_list.begin(), d_list.end());
       // do circle collision checks
       if (min_dist <= size + robot_radius) {  // robot intersects with obs
+        cout << "Collision of node " << node << endl;
         return true; // collision
       }
     }
@@ -197,7 +220,7 @@ void RRT::draw_circle(double x, double y, double size, string color) {
   static bool deg_init = false;
   if (!deg_init) {
     generate(deg.begin(), deg.end(),
-            [n = 0] () mutable {return n++; });
+            [n = 0] () mutable { return n += 5; });
     deg.push_back(0);
     deg_init = true;
   }
@@ -213,6 +236,34 @@ void RRT::draw_circle(double x, double y, double size, string color) {
 }
 
 int main() {
+
+  obstacle_list obs = {
+    make_tuple(5.0, 5.0, 1.0),
+    make_tuple(3.0, 6.0, 2.0),
+    make_tuple(3.0, 8.0, 2.0),
+    make_tuple(3.0, 10.0, 2.0),
+    make_tuple(7.0, 5.0, 2.0),
+    make_tuple(9.0, 5.0, 2.0),
+    make_tuple(8.0, 10.0, 1.0)
+  };
+
+  position start = make_pair(0.0, 0.0);
+  position end = make_pair(6.0, 10.0);
+  double rand_area[2] = {-2, 15};
+
+  RRT rrt(start, end, obs, rand_area);
+
+  rrt.plan_rrt(true);
+
+  if (rrt.get_final_path().empty()) {
+    cout << "Cannot find path..." << endl;
+  }
+  else {
+    cout << "Path found!" << endl;
+  }
+
+  cout << "Press enter to close ..." << endl;
+  cin.ignore();
 
   return 0;
 }

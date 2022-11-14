@@ -10,7 +10,7 @@
 #include <random>
 #include <tuple>
 
-#include <Eigen/Dense>
+// #include <Eigen/Dense>
 // #include <matplot/matplot.h>
 #include "matplotlibcpp.h"
 
@@ -68,7 +68,7 @@ class RRT {
         double path_res = 0.5,
         int goal_sample_rate = 5,
         int max_iters = 500,
-        double robot_radius = 0.0
+        double robot_radius = 0.8
     ) : _start(start), 
         _end(end),
         _obs(obs),
@@ -92,7 +92,7 @@ class RRT {
     }
 
     // member functions
-    void plan_rrt(bool animation = SHOW_ANIMATION);
+    void plan_rrt(bool animation = true);
     node_ptr steer(node_ptr from_node, node_ptr to_node,
                    double extend_length = INF);
     void generate_final_course(int goal_idx);

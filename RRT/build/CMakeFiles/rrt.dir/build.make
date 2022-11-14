@@ -92,7 +92,7 @@ rrt_EXTERNAL_OBJECTS =
 
 rrt: CMakeFiles/rrt.dir/rrt.cpp.o
 rrt: CMakeFiles/rrt.dir/build.make
-rrt: /opt/homebrew/lib/libmatplot.dylib
+rrt: /opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/lib/libpython3.10.dylib
 rrt: CMakeFiles/rrt.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/johnathon_s_li/Desktop/Projects/cpp_path_planning/RRT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable rrt"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rrt.dir/link.txt --verbose=$(VERBOSE)
