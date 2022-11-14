@@ -9,7 +9,6 @@ find_package(Python3 3.0 REQUIRED)
 # set(PYTHON_LIBRARIES "/opt/homebrew/Caskroom/miniforge/base/lib/libpython3.9.dylib")
 # set(NUMPY_INCLUDE_DIRS "/opt/homebrew/Caskroom/miniforge/base/lib/python3.9/site-packages/numpy/core/include/numpy")
 
-include_directories(${PYTHON3_INCLUDE_DIRS} ${NUMPY_INCLUDE_DIRS})
 
 include(FetchContent)
 FetchContent_Declare(
@@ -23,17 +22,24 @@ if(NOT matplotlib_POPULATED)
 endif()
 include_directories(SYSTEM ${matplotlib_SOURCE_DIR})
 
-find_package(Matplot++ REQUIRED)
-find_package(Eigen3 3.3 REQUIRED)
+# find_package(Matplot++ REQUIRED)
+# find_package(Eigen3 3.3 REQUIRED)
 
 add_executable(rrt rrt.cpp)
 
+target_include_directories(
+    rrt
+    PRIVATE
+    ${Python3_INCLUDE_DIRS} 
+    ${NUMPY_INCLUDE_DIRS}
+)
+
 target_link_libraries(
     rrt
-    PUBLIC
-        Matplot++::matplot
-        Eigen3::Eigen
-        ${PYTHON_LIBRARIES}
+    PRIVATE
+        # Matplot++::matplot
+        # Eigen3::Eigen
+        ${Python3_LIBRARIES}
         Python3::NumPy
 )
 
