@@ -90,8 +90,8 @@ node_ptr RRT::steer(node_ptr from_node, node_ptr to_node, double extend_length) 
   auto [last_d, last_theta] = calc_dist_and_angle(new_node, to_node);
 
   if (last_d <= _path_res) {
-    new_node->path_x.push_back(new_node->x);
-    new_node->path_y.push_back(new_node->y);
+    new_node->path_x.push_back(to_node->x);
+    new_node->path_y.push_back(to_node->y);
     new_node->x = to_node->x;
     new_node->y = to_node->y;
   }
@@ -156,6 +156,8 @@ void RRT::draw_graph(node_ptr rnd_node) const {
   plt::xlim(-2, 15);
   plt::ylim(-2, 15);
   plt::grid(true);
+  plt::title("RRT Path Finding in C++");
+
   plt::pause(0.02);
 }
 
