@@ -1,7 +1,5 @@
 # Path Planning Algorithms in C++
 
-A repository containing all of the path planning algorithms I have implemented in C++. 
-
 For some algorithms, such as RRT, a lot of inspiration comes from AtsushiSakai's tutorials found [here](https://github.com/AtsushiSakai/PythonRobotics).
 
 ## Currently Implemented Algos 
