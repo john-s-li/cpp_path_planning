@@ -16,5 +16,5 @@ For some algorithms, such as RRT, a lot of inspiration comes from AtsushiSakai's
 ## Showcase
 
 ### RRT
-![](RRT.gif)
+![](RRT/RRT.gif)
 
