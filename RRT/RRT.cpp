@@ -48,6 +48,11 @@ void RRT::plan_rrt(bool animation) {
         generate_final_course(_node_list.size() - 1);
         break;
       }
+
+      // in case there is collision steering to final node
+      if (animation && i % 5 == 0) { 
+        draw_graph(final_node);
+      }
     }
   }
 }
@@ -255,13 +260,26 @@ int main() {
 
   RRT rrt(start, end, obs, rand_area);
 
-  rrt.plan_rrt(true);
+  rrt.plan_rrt(SHOW_ANIMATION);
 
   if (rrt.get_final_path().empty()) {
     cout << "Cannot find path..." << endl;
   }
   else {
     cout << "Path found!" << endl;
+
+    if (SHOW_ANIMATION) {
+      rrt.draw_graph(); // draw all nodes in node list
+      vector<double> x_pos;
+      vector<double> y_pos;
+      for (auto pos: rrt.get_final_path()) {
+        x_pos.push_back(pos.first);
+        y_pos.push_back(pos.second);
+      }
+      plt::plot(x_pos, y_pos, "-r");
+      plt::grid(true);
+      plt::pause(0.1);
+    }
   }
 
   cout << "Press enter to close ..." << endl;

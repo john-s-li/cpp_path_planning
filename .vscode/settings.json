@@ -91,6 +91,7 @@
         "filesystem": "cpp",
         "valarray": "cpp",
         "regex": "cpp",
-        "*.inc": "cpp"
+        "*.inc": "cpp",
+        "specialfunctions": "cpp"
     }
 }
