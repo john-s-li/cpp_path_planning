@@ -18,7 +18,6 @@ using namespace std;
 
 struct Node; // prevent circular dependency
 
-const bool SHOW_ANIMATION = true;
 double INF = numeric_limits<double>::infinity();
 
 typedef pair<double, double> position;
@@ -92,7 +91,7 @@ class RRT {
     }
 
     // member functions
-    void plan_rrt(bool animation = true);
+    virtual void plan_rrt(bool animation = true);
     node_ptr steer(node_ptr from_node, node_ptr to_node,
                    double extend_length = INF);
     void generate_final_course(int goal_idx);
@@ -113,6 +112,7 @@ class RRT {
                                 double robot_radius);
     static dist_and_angle calc_dist_and_angle(node_ptr from_node,
                                               node_ptr to_node);
+    static int find_min_elem_idx(vector<double> dists);
 
   private:
     position _start; // start position [x, y]

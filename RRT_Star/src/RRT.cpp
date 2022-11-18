@@ -2,20 +2,6 @@
 
 namespace plt = matplotlibcpp;
 
-// helper function
-int find_min_elem_idx(vector<double> dists) {
-  int min_idx;
-  double min = INF;
-  for(int i = 0; i < dists.size(); i++) {
-    if (dists[i] < min) {
-      min = dists[i];
-      min_idx = i;
-    }
-  }
-
-  return min_idx;
-}
-
 void RRT::plan_rrt(bool animation) {
   cout << "Start node: " << _start_node << endl;
   cout << "End node: " << _end_node << endl;
@@ -242,48 +228,14 @@ void RRT::draw_circle(double x, double y, double size, string color) {
   plt::plot(x_circle, y_circle, color);
 }
 
-int main() {
-
-  obstacle_list obs = {
-    make_tuple(5.0, 5.0, 1.0),
-    make_tuple(3.0, 6.0, 2.0),
-    make_tuple(3.0, 8.0, 2.0),
-    make_tuple(3.0, 10.0, 2.0),
-    make_tuple(7.0, 5.0, 2.0),
-    make_tuple(9.0, 5.0, 2.0),
-    make_tuple(8.0, 10.0, 1.0)
-  };
-
-  position start = make_pair(0.0, 0.0);
-  position end = make_pair(6.0, 10.0);
-  double rand_area[2] = {-2, 15};
-
-  RRT rrt(start, end, obs, rand_area);
-
-  rrt.plan_rrt(SHOW_ANIMATION);
-
-  if (rrt.get_final_path().empty()) {
-    cout << "Cannot find path..." << endl;
-  }
-  else {
-    cout << "Path found!" << endl;
-
-    if (SHOW_ANIMATION) {
-      rrt.draw_graph(); // draw all nodes in node list
-      vector<double> x_pos;
-      vector<double> y_pos;
-      for (auto pos: rrt.get_final_path()) {
-        x_pos.push_back(pos.first);
-        y_pos.push_back(pos.second);
-      }
-      plt::plot(x_pos, y_pos, "-r");
-      plt::grid(true);
-      plt::pause(0.1);
+int RRT::find_min_elem_idx(vector<double> dists) {
+  int min_idx = 0;
+  double min = INF;
+  for(int i = 0; i < dists.size(); i++) {
+    if (dists[i] < min) {
+      min = dists[i];
+      min_idx = i;
     }
   }
-
-  cout << "Press enter to close ..." << endl;
-  cin.ignore();
-
-  return 0;
+  return min_idx;
 }
