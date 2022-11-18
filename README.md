@@ -5,12 +5,12 @@ For some algorithms, such as RRT, a lot of inspiration comes from AtsushiSakai's
 ## Currently Implemented Algos 
 1. BFS
 2. Dijkstras
-3. A Star
+3. A*
 4. RRT (Rapidly-exploring random tree)
 
 ## Currently in progress
-1. Hybrid A Star
-
+1. Hybrid A*
+2. RRT*
 ## Showcase
 
 ### RRT
