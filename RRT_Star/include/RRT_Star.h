@@ -7,13 +7,6 @@ using namespace std;
 
 typedef vector<int> list_idx; 
 
-struct NodeWithCost : public Node {
-  NodeWithCost(double x, double y) 
-  : Node(x, y) {};
-
-  double cost = 0.0;
-};
-
 class RRT_Star : public RRT {
   public:
     RRT_Star(position start, 
@@ -31,8 +24,8 @@ class RRT_Star : public RRT {
             expand_dist, path_res, goal_sample_rate,
             max_iters, robot_radius)
     {
-      connect_circle_dist_ = connect_circle_dist;
-      search_until_max_iter_ = search_until_max_iter;
+      _connect_circle_dist = connect_circle_dist;
+      _search_until_max_iter = search_until_max_iter;
     }
 
     void plan_rrt(bool animation = false);
@@ -44,8 +37,8 @@ class RRT_Star : public RRT {
     static double calc_new_cost(node_ptr from_node, node_ptr to_node);
     
   private:
-    double connect_circle_dist_;
-    bool search_until_max_iter_;
+    double _connect_circle_dist;
+    bool _search_until_max_iter;
 }; 
 
 #endif

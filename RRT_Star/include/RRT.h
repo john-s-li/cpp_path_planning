@@ -1,5 +1,5 @@
-#ifndef RRT_SOLVER_
-#define RRT_SOLVER_
+#ifndef RRT_H_
+#define RRT_H_
 
 #include <math.h>
 #include <iostream>
@@ -10,8 +10,6 @@
 #include <random>
 #include <tuple>
 
-// #include <Eigen/Dense>
-// #include <matplot/matplot.h>
 #include "matplotlibcpp.h"
 
 using namespace std;
@@ -32,6 +30,7 @@ struct Node {
   vector<double> path_x;
   vector<double> path_y;
   shared_ptr<Node> parent;
+  double cost = 0.0; // added for RRT*
 
   Node(double x, double y) : 
     x(x), y(y) {}
@@ -58,6 +57,9 @@ inline double deg2rad(double d) {
 
 class RRT {
   public:
+    RRT() = default;
+    virtual ~RRT() = default;
+
     RRT(position start, 
         position end,
         obstacle_list obs,
@@ -114,7 +116,7 @@ class RRT {
                                               node_ptr to_node);
     static int find_min_elem_idx(vector<double> dists);
 
-  private:
+  protected: // (private --> protected) give access to RRT* sub-class
     position _start; // start position [x, y]
     position _end;   // goal position [x, y]
     obstacle_list _obs; // list of obstacles [[x, y, size], ...]
