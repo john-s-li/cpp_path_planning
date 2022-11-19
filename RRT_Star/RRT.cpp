@@ -124,7 +124,7 @@ node_ptr RRT::get_random_node() const {
   return rand_node;
 }
 
-void RRT::draw_graph(node_ptr rnd_node) const {
+void RRT::draw_graph(node_ptr rnd_node, string algo_name) const {
   plt::clf();
   if (rnd_node) {
     plt::plot(vector<double> {rnd_node->x}, vector<double> {rnd_node->y}, "^k");
@@ -154,7 +154,7 @@ void RRT::draw_graph(node_ptr rnd_node) const {
   plt::xlim(-2, 15);
   plt::ylim(-2, 15);
   plt::grid(true);
-  plt::title("RRT Path Finding in C++");
+  plt::title(algo_name + " Path Finding in C++");
 
   plt::pause(0.02);
 }

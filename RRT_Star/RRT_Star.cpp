@@ -31,7 +31,7 @@ void RRT_Star::plan_rrt(bool animation) {
       }
     }
 
-    if (animation) draw_graph(rnd_node);
+    if (animation) draw_graph(rnd_node, "RRT*");
 
     if (!_search_until_max_iter) {
       int last_idx = search_best_goal_node();
@@ -193,7 +193,7 @@ int main() {
     cout << "Path found!" << endl;
 
     if (SHOW_ANIMATION) {
-      rrt_star.draw_graph(); // draw all nodes in node list
+      rrt_star.draw_graph(nullptr, "RRT*"); // draw all nodes in node list
       vector<double> x_pos;
       vector<double> y_pos;
       for (auto pos: rrt_star.get_final_path()) {

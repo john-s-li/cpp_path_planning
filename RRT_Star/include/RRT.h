@@ -114,7 +114,7 @@ class RRT {
     void generate_final_course(int goal_idx);
     double calc_dist_to_goal(double x, double y) const;
     node_ptr get_random_node() const;
-    void draw_graph(node_ptr rnd = nullptr) const;
+    void draw_graph(node_ptr rnd = nullptr, string algo_name = "RRT") const;
     vector<position> get_final_path() const { return _final_path; }
  
     static void draw_circle(double x, double y, double size, 
