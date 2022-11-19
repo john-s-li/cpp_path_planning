@@ -16,7 +16,7 @@ class RRT_Star : public RRT {
              double expand_dist = 30.0,
              double path_res = 1.0,
              int goal_sample_rate = 20,
-             int max_iters = 300,
+             int max_iters = 1000,
              double connect_circle_dist = 50.0,
              bool search_until_max_iter = false,
              double robot_radius = 0.8

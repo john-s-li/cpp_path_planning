@@ -102,10 +102,11 @@ list_idx RRT_Star::find_near_nodes(node_ptr new_node) const {
    * 1) Define a ball centered on new_node
    * 2) returns all nodes of the tree that are inside this ball
    */
-
+  cout << "Finding near nodes\n";
   int num_nodes = size(_node_list) + 1;
   // see Sertac and Frazzoli Theorem 7: connectivity of random r-disc graphs
   double r = _connect_circle_dist * sqrt(log(num_nodes)/ num_nodes);
+  cout << "r = " << r << " | expand_dist = " << _expand_dist << endl;
   r = min(r, _expand_dist);
 
   auto dist = [](const auto node1, const auto node2) -> double {
@@ -168,14 +169,14 @@ int main() {
     make_tuple(3.0, 10.0, 2.0),
     make_tuple(7.0, 5.0, 2.0),
     make_tuple(9.0, 5.0, 2.0),
-    make_tuple(8.0, 10.0, 1.0),
-    make_tuple(6.0, 12.0, 1.0)
+    //make_tuple(8.0, 10.0, 1.0),
+    //make_tuple(6.0, 12.0, 1.0)
   }; // x, y, radius
 
   position start = make_pair(0.0, 0.0);
   position end = make_pair(6.0, 10.0);
   double rand_area[2] = {-2, 15};
-  double expand_dist = 1.0;
+  double expand_dist = 3.0;
 
   RRT_Star rrt_star = RRT_Star(start,
                                end,
@@ -183,7 +184,7 @@ int main() {
                                rand_area,
                                expand_dist);
 
-  rrt_star.plan_rrt(!SHOW_ANIMATION);
+  rrt_star.plan_rrt(SHOW_ANIMATION);
 
   if (rrt_star.get_final_path().empty()) {
     cout << "Cannot find path..." << endl;
