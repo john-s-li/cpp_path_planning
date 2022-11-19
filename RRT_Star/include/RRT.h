@@ -16,7 +16,7 @@ using namespace std;
 
 struct Node; // prevent circular dependency
 
-double INF = numeric_limits<double>::infinity();
+extern double INF;
 
 typedef pair<double, double> position;
 typedef tuple<double, double, double> obstacle;
@@ -49,11 +49,11 @@ struct Node {
   bool operator== (const Node& other) {
     return (x == other.x && y == other.y);
   }
-};
 
-ostream& operator<< (ostream& out, const Node* node) {
-  return out << "(" << node->x << ", " << node->y << ")";
-}
+  friend ostream& operator<< (ostream& out, const Node* node) {
+    return out << "(" << node->x << ", " << node->y << ")";
+  }
+};
 
 struct AreaBounds {
   double x_min = 0.0; 

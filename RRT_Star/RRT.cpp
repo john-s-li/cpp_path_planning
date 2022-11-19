@@ -2,6 +2,8 @@
 
 namespace plt = matplotlibcpp;
 
+double INF = numeric_limits<double>::infinity();
+
 void RRT::plan_rrt(bool animation) {
   cout << "Start node: " << _start_node << endl;
   cout << "End node: " << _end_node << endl;
