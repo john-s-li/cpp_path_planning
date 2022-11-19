@@ -18,4 +18,4 @@ For some algorithms, such as RRT, a lot of inspiration comes from AtsushiSakai's
 ### RRT
 ![](RRT/RRT.gif)
 ### RRT*
-![](RRT_Star/RRT*.gif))
+![](RRT_Star/RRT*.gif)
