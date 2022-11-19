@@ -34,6 +34,21 @@ struct Node {
 
   Node(double x, double y) : 
     x(x), y(y) {}
+
+  const Node& operator= (const Node& other) {
+    x = other.x;
+    y = other.y;
+    path_x = other.path_x;
+    path_y = other.path_y;
+    parent = other.parent;
+    cost = other.cost;
+
+    return *this;
+  }
+
+  bool operator== (const Node& other) {
+    return (x == other.x && y == other.y);
+  }
 };
 
 ostream& operator<< (ostream& out, const Node* node) {
@@ -95,7 +110,7 @@ class RRT {
     // member functions
     virtual void plan_rrt(bool animation = true);
     node_ptr steer(node_ptr from_node, node_ptr to_node,
-                   double extend_length = INF);
+                   double extend_length = INF) const;
     void generate_final_course(int goal_idx);
     double calc_dist_to_goal(double x, double y) const;
     node_ptr get_random_node() const;

@@ -13,7 +13,7 @@ class RRT_Star : public RRT {
              position end,
              obstacle_list obs,
              double rand_area[2],
-             double expand_dist = 3.0,
+             double expand_dist = 30.0,
              double path_res = 1.0,
              int goal_sample_rate = 20,
              int max_iters = 300,
@@ -29,10 +29,10 @@ class RRT_Star : public RRT {
     }
 
     void plan_rrt(bool animation = false);
-    node_ptr choose_parent(node_ptr new_node, list_idx idxs) const;
+    node_ptr choose_parent(node_ptr new_node, list_idx near_idxs) const;
     int search_best_goal_node() const;
     list_idx find_near_nodes(node_ptr new_node) const;
-    void rewire(node_ptr new_node, list_idx idxs);
+    void rewire(node_ptr new_node, list_idx near_idxs);
     void propogate_cost_to_leaves(node_ptr parent_node);
     static double calc_new_cost(node_ptr from_node, node_ptr to_node);
     

@@ -53,7 +53,9 @@ void RRT::generate_final_course(int goal_idx) {
   _final_path.push_back(make_pair(node->x, node->y));
 }
 
-node_ptr RRT::steer(node_ptr from_node, node_ptr to_node, double extend_length) {
+node_ptr RRT::steer(node_ptr from_node, 
+                    node_ptr to_node, 
+                    double extend_length) const {
   // make this as to not alter from_node
   node_ptr new_node = make_shared<Node>(from_node->x, from_node->y);
 
@@ -64,6 +66,9 @@ node_ptr RRT::steer(node_ptr from_node, node_ptr to_node, double extend_length) 
 
   if (extend_length > d) {
     extend_length = d;
+  }
+  else {
+    return nullptr;
   }
 
   int num_expansions = floor(extend_length / _path_res);
