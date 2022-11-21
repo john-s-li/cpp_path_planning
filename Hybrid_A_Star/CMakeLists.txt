@@ -26,6 +26,7 @@ target_include_directories(
     PRIVATE
     ${Python3_INCLUDE_DIRS}
     ${NUMPY_INCLUDE_DIRS}
+    kdtree-cpp/include
     "include/"
 )
 
