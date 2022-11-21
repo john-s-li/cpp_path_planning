@@ -33,7 +33,7 @@ target_link_libraries(
     hybrid_a_star
     PRIVATE
     ${Python3_LIBRARIES}
-    Python3::NumPy
+    ${NUMPY_LIBRARIES}
     kdtree-cpp
 )
 
