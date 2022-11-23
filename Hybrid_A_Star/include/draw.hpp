@@ -8,6 +8,7 @@
 #include "config.h"
 
 using namespace std;
+namespace plt = matplotlibcpp;
 
 class Arrow {
 
@@ -17,7 +18,7 @@ class Car {
 
 };
 
-void draw_car(double x, double y, double yaw, C &config,
+void draw_car(double x, double y, double yaw, const C &config,
               string color = "black") {
 
 };
