@@ -3,10 +3,13 @@
 
 #include <string>
 #include <vector>
+#include <memory>
 
 #include "kdtree.hpp"
 #include "matplotlibcpp.h"
 #include "reeds_shepp.h"
+#include "config.h"
+
 
 class HybridAStar {
 
