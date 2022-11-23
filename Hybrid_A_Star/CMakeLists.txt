@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.13)
 
 project(hybrid_a_star)
 
@@ -17,6 +17,15 @@ if(NOT matplotlib_POPULATED)
 endif()
 include_directories(SYSTEM ${matplotlib_SOURCE_DIR})
 
+include(FetchContent)
+FetchContent_Declare(
+	pybind11
+	GIT_REPOSITORY https://github.com/pybind/pybind11.git
+	GIT_TAG        v2.6.2
+	GIT_SHALLOW    TRUE
+)
+FetchContent_MakeAvailable(pybind11)
+
 add_executable(hybrid_a_star hybrid_a_star.cpp)
 
 add_subdirectory(kdtree-cpp)
@@ -24,18 +33,19 @@ add_subdirectory(kdtree-cpp)
 target_include_directories(
     hybrid_a_star
     PRIVATE
-    ${Python3_INCLUDE_DIRS}
-    ${NUMPY_INCLUDE_DIRS}
-    kdtree-cpp/include
-    "include/"
+        ${Python3_INCLUDE_DIRS}
+        ${NUMPY_INCLUDE_DIRS}
+        kdtree-cpp/include
+        ${hybrid_a_star_SOURCE_DIR}/include
 )
 
 target_link_libraries(
     hybrid_a_star
     PRIVATE
-    ${Python3_LIBRARIES}
-    ${NUMPY_LIBRARIES}
-    kdtree-cpp
+        ${Python3_LIBRARIES}
+        Python3::NumPy
+        kdtree-cpp
+        pybind11::embed
 )
 
 target_compile_features(hybrid_a_star PRIVATE cxx_std_17)
