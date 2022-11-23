@@ -6,6 +6,7 @@
 
 #include "kdtree.hpp"
 #include "matplotlibcpp.h"
+#include "reeds_shepp.h"
 
 class HybridAStar {
 

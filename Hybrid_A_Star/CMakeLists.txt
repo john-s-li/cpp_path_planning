@@ -4,6 +4,7 @@ project(hybrid_a_star)
 
 find_package(Python3 COMPONENTS Interpreter Development NumPy REQUIRED)
 find_package(Python3 3.0 REQUIRED)
+find_package(Boost 1.80 COMPONENTS program_options REQUIRED)
 
 include(FetchContent)
 FetchContent_Declare(
