@@ -20,9 +20,12 @@ void RRT_Star::plan_rrt(bool animation) {
     new_node->cost = calc_new_cost(nearest_node, new_node);
 
     if (!check_collision(new_node, _obs, _robot_radius)) {
+      // find all nodes within ball of radius expand dist
       list_idx near_idxs = find_near_nodes(new_node);
+      // see if any of the near nodes as parent provides a lower cost
       node_ptr node_with_updated_parent = choose_parent(new_node, near_idxs);
       if (node_with_updated_parent) {
+        // check if new node -> near nodes generates a lower overall cost
         rewire(node_with_updated_parent, near_idxs);
         _node_list.push_back(node_with_updated_parent);
       }
