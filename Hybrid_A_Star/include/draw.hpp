@@ -4,6 +4,7 @@
 #include <math.h>
 #include <string>
 
+#include <Eigen/Dense>
 #include "matplotlibcpp.h"
 #include "config.h"
 

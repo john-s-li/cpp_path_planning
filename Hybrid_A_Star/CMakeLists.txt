@@ -4,6 +4,7 @@ project(hybrid_a_star)
 
 find_package(Python3 COMPONENTS Interpreter Development NumPy REQUIRED)
 find_package(Python3 3.0 REQUIRED)
+find_package(Eigen3 3.3 REQUIRED)
 # find_package(Boost 1.80 COMPONENTS program_options REQUIRED)
 
 include(FetchContent)
@@ -40,6 +41,7 @@ target_link_libraries(
         Python3::NumPy
         kdtree-cpp
         reeds-shepp
+        Eigen3::Eigen
 )
 
 target_compile_features(hybrid_a_star PRIVATE cxx_std_17)
