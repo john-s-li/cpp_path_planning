@@ -31,6 +31,11 @@ struct C { // Param Config
   const double TR = 0.5; // [m] tire radius
   const double TW = 1; // [m] tire width
   const double MAX_STEER = 0.6; // [rad] maximum steering angle
+
+  static C& instance() {
+    static C singleton;
+    return singleton;
+  }
 };
 
 #endif

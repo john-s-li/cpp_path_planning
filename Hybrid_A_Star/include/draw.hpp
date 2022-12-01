@@ -12,7 +12,7 @@
 using namespace std;
 namespace plt = matplotlibcpp;
 
-const double PI = M_PI;
+const double PI = C::instance().PI;
 
 class Arrow {
   public:
@@ -55,15 +55,18 @@ class Arrow {
 
       plt::plot(vector<double>{x_hat_start, x_hat_end_R},
                 vector<double>{y_hat_start, y_hat_end_R}, settings);
+
     }
 };
 
 class Car {
-
+  public:
+   Car() = default;
+   static void draw_car(double x, double y, double yaw,
+                        string color = "black");
 };
 
-void draw_car(double x, double y, double yaw, const C &config,
-              string color = "black") {
+void Car::draw_car(double x, double y, double yaw, string color) {
 
 };
 
