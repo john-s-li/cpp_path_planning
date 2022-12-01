@@ -26,6 +26,11 @@ class Arrow {
       settings["linewidth"] = to_string(line_width);
       settings["color"] = color;
 
+      // need to ensure that theta is in radians (simple check)
+      if (theta > 2*PI) {
+        theta = deg2rad(theta);
+      }
+
       double x_start = x;
       double y_start = y;
       double x_end = x + length * cos(theta);
