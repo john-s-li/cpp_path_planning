@@ -19,7 +19,7 @@ if(NOT matplotlib_POPULATED)
 endif()
 include_directories(SYSTEM ${matplotlib_SOURCE_DIR})
 
-add_executable(hybrid_a_star hybrid_a_star.cpp)
+add_executable(hybrid_a_star main.cpp)
 
 add_subdirectory(kdtree-cpp)
 add_subdirectory(reeds-shepp)

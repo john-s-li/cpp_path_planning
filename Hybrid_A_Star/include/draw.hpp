@@ -82,12 +82,16 @@ void draw_car(float x, float y, float yaw, float steer, string color = "black") 
   Eigen::Matrix2f R1;
   Eigen::Matrix2f R2;
 
+  // Yaw
   R1 << cos(yaw), -sin(yaw),
         sin(yaw),  cos(yaw);
 
+  // Steering
+  // transpose of R1 due to industry convention
   R2 <<  cos(steer), sin(steer),
         -sin(steer), cos(steer);
 
+  // Rotate the front wheels based on steering
   fl_wheel = R2 * fl_wheel;
   fr_wheel = R2 * fr_wheel;
 
@@ -100,6 +104,7 @@ void draw_car(float x, float y, float yaw, float steer, string color = "black") 
   fl_wheel.colwise() += add_to_fl;
   fr_wheel.colwise() += add_to_fr;
 
+  // Do yaw rotation for all of car
   fl_wheel = R1 * fl_wheel;
   fr_wheel = R1 * fr_wheel;
 
