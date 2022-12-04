@@ -12,9 +12,7 @@ int main() {
   auto samples = rs.sample(q_init, q_goal, step_size);
   auto types = rs.type(q_init, q_goal);
 
-
-  Car car;
-  car.draw_car(10.0, 7.0, deg2rad(120.0), deg2rad(30.0));
+  draw_car(0.0, 0.0, deg2rad(30.0), deg2rad(20.0));
 
   return 0;
 }
