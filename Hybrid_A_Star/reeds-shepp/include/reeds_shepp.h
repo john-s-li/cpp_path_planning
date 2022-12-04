@@ -25,39 +25,39 @@ class ReedsSheppStateSpace
       public:
         ReedsSheppPath(
           const ReedsSheppPathSegmentType* type=reedsSheppPathType[0],
-          double t=std::numeric_limits<double>::max(), 
-          double u=0., double v=0.,
-          double w=0., double x=0.);
+          float t=std::numeric_limits<float>::max(), 
+          float u=0., float v=0.,
+          float w=0., float x=0.);
         
-        double length() const { return totalLength_; }
+        float length() const { return totalLength_; }
 
         /** Path segment types */
         const ReedsSheppPathSegmentType* type_;
         /** Path segment lengths */
-        double length_[5];
+        float length_[5];
         /** Total length */
-        double totalLength_;
+        float totalLength_;
     };
 
-    typedef vector<vector<double>> sample_paths;
+    typedef vector<vector<float>> sample_paths;
     typedef vector<ReedsSheppPathSegmentType> path_types;
 
-    ReedsSheppStateSpace(double turningRadius) : rho_(turningRadius) {}
+    ReedsSheppStateSpace(float turningRadius) : rho_(turningRadius) {}
 
-    double distance(double q0[3], double q1[3]);
-    path_types type(double q0[3], double q1[3]);
-    sample_paths sample(double q0[3], double q1[3], double step_size);
+    float distance(float q0[3], float q1[3]);
+    path_types type(float q0[3], float q1[3]);
+    sample_paths sample(float q0[3], float q1[3], float step_size);
 
     /** \brief Return the shortest Reeds-Shepp path from 
      *   SE(2) state state1 to SE(2) state state2 */
-    ReedsSheppPath reedsShepp(double q0[3], double q1[3]);
+    ReedsSheppPath reedsShepp(float q0[3], float q1[3]);
 
 protected:
-    void interpolate(double q0[3], ReedsSheppPath &path, 
-                     double seg, vector<double>& s);
+    void interpolate(float q0[3], ReedsSheppPath &path, 
+                     float seg, vector<float>& s);
 
     /** \brief Turning radius */
-    double rho_;
+    float rho_;
 };
 
 #endif
