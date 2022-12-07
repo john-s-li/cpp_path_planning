@@ -99,7 +99,7 @@ class HybridAStar {
 
     void run_hybrid_a_star(float start_x, float start_y, float start_yaw,
                            float goal_x, float goal_y, float goal_yaw,
-                           vector<float> obs_x, vector<float> obs_y,
+                           vector<int> obs_x, vector<int> obs_y,
                            float xy_reso, float yaw_reso);
     
     Path extract_path() const;
@@ -139,6 +139,9 @@ class HybridAStar {
                                         float yaw_reso, kdtree_ptr kdtree);
 
     static tuple<vector<int>, vector<int>> design_obstacles(int x, int y);
+
+    template <typename T> // for double or for float
+    static T pi_2_pi(T theta);
   
   private:
     node_ptr start_node_;
@@ -150,6 +153,8 @@ class HybridAStar {
 
     node_set closed_set_; // visited nodes
     node_set open_set_; // nodes to be visited
+
+    kdtree_ptr kd_tree_;
 
     shared_ptr<Path> best_path_;
     params_ptr params_;
