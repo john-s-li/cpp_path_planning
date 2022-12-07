@@ -71,7 +71,7 @@ struct Params {
   Params(float min_x, float min_y, float min_yaw,
          float max_x, float max_y, float max_yaw,
          float x_width, float y_width,
-         vector<float> ox, vector<float> oy,
+         const vector<int> &ox, const vector<int> &oy,
          kdtree_ptr tree)
   : min_x(min_x), min_y(min_y), min_yaw(min_yaw),
     max_x(max_x), max_y(max_y), max_yaw(max_yaw),
@@ -86,8 +86,8 @@ struct Params {
   float max_yaw;
   float x_width;
   float y_width;
-  vector<float> ox; // obstacle x-coords
-  vector<float> oy; // obstacle y-coords
+  vector<int> ox; // obstacle x-coords
+  vector<int> oy; // obstacle y-coords
   kdtree_ptr tree;
 };
 
@@ -99,7 +99,7 @@ class HybridAStar {
 
     void run_hybrid_a_star(float start_x, float start_y, float start_yaw,
                            float goal_x, float goal_y, float goal_yaw,
-                           vector<int> obs_x, vector<int> obs_y,
+                           vector<int> &obs_x, vector<int> &obs_y,
                            float xy_reso, float yaw_reso);
     
     Path extract_path() const;
@@ -134,9 +134,10 @@ class HybridAStar {
 
     static bool is_same_grid(const node_ptr node1, const node_ptr node2);
     
-    static params_ptr update_parameters(vector<float> obs_x, 
-                                        vector<float> obs_y,
-                                        float yaw_reso, kdtree_ptr kdtree);
+    static params_ptr update_parameters(vector<int> &obs_x, 
+                                        vector<int> &obs_y,
+                                        float xy_reso, float yaw_reso, 
+                                        kdtree_ptr kdtree);
 
     static tuple<vector<int>, vector<int>> design_obstacles(int x, int y);
 
@@ -153,8 +154,6 @@ class HybridAStar {
 
     node_set closed_set_; // visited nodes
     node_set open_set_; // nodes to be visited
-
-    kdtree_ptr kd_tree_;
 
     shared_ptr<Path> best_path_;
     params_ptr params_;

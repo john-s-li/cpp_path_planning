@@ -17,7 +17,7 @@ T HybridAStar::pi_2_pi(T theta) {
 
 void HybridAStar::run_hybrid_a_star(float start_x, float start_y, float start_yaw,
                                     float goal_x, float goal_y, float goal_yaw,
-                                    vector<int> obs_x, vector<int> obs_y,
+                                    vector<int> &obs_x, vector<int> &obs_y,
                                     float xy_reso, float yaw_reso) {
 
   // sxr = start x with resolution r
@@ -45,8 +45,31 @@ void HybridAStar::run_hybrid_a_star(float start_x, float start_y, float start_ya
     nodes.push_back(Kdtree::KdNode(point));
   }
 
-  kd_tree_ = make_shared<KdTree>(&nodes);
+  kdtree_ptr kd_tree = make_shared<KdTree>(&nodes);
   
+  params_ = update_parameters(obs_x, obs_y, xy_reso, yaw_reso, kd_tree);
+
+}
+
+params_ptr HybridAStar::update_parameters(vector<int> &obs_x, vector<int> &obs_y,
+                                          float xy_reso, float yaw_reso, 
+                                          kdtree_ptr kd_tree) {
+
+  float min_x = round(*min_element(obs_x.begin(), obs_x.end()) / xy_reso);
+  float min_y = round(*min_element(obs_y.begin(), obs_y.end()) / xy_reso);
+  float min_x = round(*max_element(obs_x.begin(), obs_x.end()) / xy_reso);
+  float min_y = round(*max_element(obs_y.begin(), obs_y.end()) / xy_reso);
+
+  float x_width = max_x - min_x, y_width = max_y - min_y;
+
+  float min_yaw = round(-C::instance().PI / yaw_reso) - 1;
+  float max_yaw = round( C::instance().PI / yaw_reso);
+  float yaw_width = max_yaw - min_yaw;
+
+  return make_shared<Params>(min_x, min_y, min_yaw,
+                             max_x, max_y, max_yaw,
+                             x_width, y_width, yaw_width,
+                             obs_x, obs_y, kd_tree);
 
 }
 
