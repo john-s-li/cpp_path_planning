@@ -39,9 +39,9 @@ void HybridAStar::run_hybrid_a_star(float start_x, float start_y, float start_ya
   Kdtree::KdNodeVector nodes;
 
   for (int i = 0; i < obs_x.size(); i++) {
-    vector<int> point(2);
-    point[0] = obs_x[i];
-    point[1] = obs_y[i];
+    vector<float> point(2);
+    point[0] = float(obs_x[i]);
+    point[1] = float(obs_y[i]);
     nodes.push_back(Kdtree::KdNode(point));
   }
 
@@ -72,6 +72,8 @@ params_ptr HybridAStar::update_parameters(vector<int> &obs_x, vector<int> &obs_y
                              obs_x, obs_y, kd_tree);
 
 }
+
+
 
 tuple<vector<int>, vector<int>> HybridAStar::design_obstacles(int x, int y) {
   /**

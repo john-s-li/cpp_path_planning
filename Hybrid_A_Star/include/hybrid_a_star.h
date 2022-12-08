@@ -12,87 +12,83 @@
 #include "reeds_shepp.h"
 #include "draw.hpp"
 #include "config.h"
+#include "a_star_helper.hpp"
 
 using Kdtree::KdTree;
-
-struct Node;
-struct Path;
-struct Params;
-
-typedef tuple<float, Path> path_with_cost;
-typedef shared_ptr<Node> node_ptr;
-typedef unordered_map<float, node_ptr> node_set;
-typedef shared_ptr<KdTree> kdtree_ptr;
-typedef shared_ptr<Params> params_ptr;
-typedef vector<float> steer_set;
-typedef vector<float> motion_set;
-typedef vector<vector<float>> heuristic_map;
-
-struct Node {
-  Node(float x_ind, float y_ind, float yaw_ind, int direction,
-       vector<float> xs, vector<float> ys, vector<float> yaws,
-       vector<int> &directions, float steer, float cost, float hash_val)
-  : x_ind(x_ind), y_ind(y_ind), yaw_ind(yaw_ind), 
-    direction(direction),
-    xs(xs), ys(ys), yaws(yaws),
-    directions(directions),
-    steer(steer), cost(cost), hash_val(hash_val)
-  {}
-
-  float x_ind;
-  float y_ind;
-  float yaw_ind;
-  int direction; // {-1, 1}
-  vector<float> xs;
-  vector<float> ys;
-  vector<float> yaws;
-  vector<int> directions;
-  float steer;
-  float cost;
-  float hash_val; // need to confirm this as we go
-};
-
-struct Path {
-  Path(vector<float> xs, vector<float> ys, vector<float> yaws,
-       vector<int> directions, float cost) 
-  : xs(xs), ys(ys), yaws(yaws),
-    directions(directions), cost(cost) 
-  {}
-
-  vector<float> xs;
-  vector<float> ys;
-  vector<float> yaws;
-  vector<int> directions;
-  float cost;
-};
-
-// extended params from config based on obstacles list
-struct Params {
-  Params(float min_x, float min_y, float min_yaw,
-         float max_x, float max_y, float max_yaw,
-         float x_width, float y_width,
-         const vector<int> &ox, const vector<int> &oy,
-         kdtree_ptr tree)
-  : min_x(min_x), min_y(min_y), min_yaw(min_yaw),
-    max_x(max_x), max_y(max_y), max_yaw(max_yaw),
-    x_width(x_width), y_width(y_width), ox(ox), oy(oy), tree(tree)
-  {}
-
-  float min_x;
-  float min_y;
-  float min_yaw;
-  float max_x;
-  float max_y;
-  float max_yaw;
-  float x_width;
-  float y_width;
-  vector<int> ox; // obstacle x-coords
-  vector<int> oy; // obstacle y-coords
-  kdtree_ptr tree;
-};
-
+typedef shared_ptr<Kdtree::KdTree> kdtree_ptr;
 
 class HybridAStar {
+  public:
+    struct Node {
+      Node(float x_ind, float y_ind, float yaw_ind, int direction,
+          vector<float> xs, vector<float> ys, vector<float> yaws,
+          vector<int> &directions, float steer, float cost, float parent_idx)
+      : x_ind(x_ind), y_ind(y_ind), yaw_ind(yaw_ind), 
+        direction(direction),
+        xs(xs), ys(ys), yaws(yaws),
+        directions(directions),
+        steer(steer), cost(cost), parent_idx(parent_idx)
+      {}
+
+      float x_ind;
+      float y_ind;
+      float yaw_ind;
+      int direction; // {-1, 1}
+      vector<float> xs;
+      vector<float> ys;
+      vector<float> yaws;
+      vector<int> directions;
+      float steer;
+      float cost;
+      float parent_idx; // hash value of the node's parent
+    };
+
+    struct Path {
+      Path(vector<float> xs, vector<float> ys, vector<float> yaws,
+          vector<int> directions, float cost) 
+      : xs(xs), ys(ys), yaws(yaws),
+        directions(directions), cost(cost) 
+      {}
+
+      vector<float> xs;
+      vector<float> ys;
+      vector<float> yaws;
+      vector<int> directions;
+      float cost;
+    };
+
+    // extended params from config based on obstacles list
+    struct Params {
+      Params(float min_x, float min_y, float min_yaw,
+            float max_x, float max_y, float max_yaw,
+            float x_width, float y_width,
+            const vector<int> &ox, const vector<int> &oy,
+            kdtree_ptr tree)
+      : min_x(min_x), min_y(min_y), min_yaw(min_yaw),
+        max_x(max_x), max_y(max_y), max_yaw(max_yaw),
+        x_width(x_width), y_width(y_width), ox(ox), oy(oy), tree(tree)
+      {}
+
+      float min_x;
+      float min_y;
+      float min_yaw;
+      float max_x;
+      float max_y;
+      float max_yaw;
+      float x_width;
+      float y_width;
+      vector<int> ox; // obstacle x-coords
+      vector<int> oy; // obstacle y-coords
+      kdtree_ptr tree;
+    };
+
+    typedef tuple<float, float> idx_with_cost; // [cost, node idx]
+    typedef shared_ptr<Node> node_ptr;
+    typedef unordered_map<float, node_ptr> node_set; // [node idx, node]
+    typedef shared_ptr<Params> params_ptr;
+    typedef vector<float> steer_set;
+    typedef vector<float> motion_set;
+
   public:
     HybridAStar() = default;
     ~HybridAStar() = default;
@@ -128,10 +124,6 @@ class HybridAStar {
 
     static tuple<steer_set, motion_set> calc_motion_set();
 
-    static heuristic_map calc_holonomic_heuristic_with_obs(
-      node_ptr curr_node, vector<float> obs_x, vector<float> obs_y,
-      float resolution , float robot_radius);
-
     static bool is_same_grid(const node_ptr node1, const node_ptr node2);
     
     static params_ptr update_parameters(vector<int> &obs_x, 
@@ -148,9 +140,9 @@ class HybridAStar {
     node_ptr start_node_;
     node_ptr goal_node_;
 
-    priority_queue<path_with_cost,
-                   vector<path_with_cost>,
-                   greater<path_with_cost>> path_pq_;
+    priority_queue<idx_with_cost,
+                   vector<idx_with_cost>,
+                   greater<idx_with_cost>> path_pq_;
 
     node_set closed_set_; // visited nodes
     node_set open_set_; // nodes to be visited
