@@ -27,13 +27,19 @@ void HybridAStar::run_hybrid_a_star(float start_x, float start_y, float start_ya
   float syawr = round(pi_2_pi<float>(start_yaw) / yaw_reso);
   float gyawr = round(pi_2_pi<float>(goal_yaw) / yaw_reso);
 
-  auto start_node = Node(sxr, syr, syawr, 1, 
-                        {start_x}, {start_y}, {start_yaw},
-                        {1}, 0.0, 0.0, -1.0);
+  start_node_ = make_shared<Node>(sxr, syr, syawr, 1, 
+                                  vector<float>{start_x}, 
+                                  vector<float>{start_y}, 
+                                  vector<float>{start_yaw},
+                                  vector<int>{1}, 
+                                  0.0, 0.0, -1.0);
 
-  auto start_node = Node(gxr, gyr, gyawr, 1, 
-                        {goal_x}, {goal_y}, {goal_yaw},
-                        {1}, 0.0, 0.0, -1.0);
+  goal_node_  = make_shared<Node>(gxr, gyr, gyawr, 1, 
+                                  vector<float>{goal_x}, 
+                                  vector<float>{goal_y}, 
+                                  vector<float>{goal_yaw},
+                                  vector<int>{1}, 
+                                  0.0, 0.0, -1.0);
 
   // make the obstacle kd-tree
   Kdtree::KdNodeVector nodes;
@@ -46,19 +52,24 @@ void HybridAStar::run_hybrid_a_star(float start_x, float start_y, float start_ya
   }
 
   kdtree_ptr kd_tree = make_shared<KdTree>(&nodes);
-  
+
   params_ = update_parameters(obs_x, obs_y, xy_reso, yaw_reso, kd_tree);
+
+  heuristic_map hmap = AStarHelper::calc_holonomic_heuristic_with_obs(
+                      goal_node_->xs.back(), goal_node_->ys.back(), 
+                      params_->obs_x, params_->obs_y,
+                      params_->reso, 1.0);
 
 }
 
-params_ptr HybridAStar::update_parameters(vector<int> &obs_x, vector<int> &obs_y,
-                                          float xy_reso, float yaw_reso, 
-                                          kdtree_ptr kd_tree) {
+HybridAStar::params_ptr HybridAStar::update_parameters(
+                    vector<int> &obs_x, vector<int> &obs_y,
+                    float xy_reso, float yaw_reso, kdtree_ptr kd_tree) {
 
   float min_x = round(*min_element(obs_x.begin(), obs_x.end()) / xy_reso);
   float min_y = round(*min_element(obs_y.begin(), obs_y.end()) / xy_reso);
-  float min_x = round(*max_element(obs_x.begin(), obs_x.end()) / xy_reso);
-  float min_y = round(*max_element(obs_y.begin(), obs_y.end()) / xy_reso);
+  float max_x = round(*max_element(obs_x.begin(), obs_x.end()) / xy_reso);
+  float max_y = round(*max_element(obs_y.begin(), obs_y.end()) / xy_reso);
 
   float x_width = max_x - min_x, y_width = max_y - min_y;
 
@@ -69,6 +80,7 @@ params_ptr HybridAStar::update_parameters(vector<int> &obs_x, vector<int> &obs_y
   return make_shared<Params>(min_x, min_y, min_yaw,
                              max_x, max_y, max_yaw,
                              x_width, y_width, yaw_width,
+                             xy_reso, yaw_reso,
                              obs_x, obs_y, kd_tree);
 
 }
@@ -79,6 +91,8 @@ tuple<vector<int>, vector<int>> HybridAStar::design_obstacles(int x, int y) {
   /**
    * Make (x, y) points that compose walls of parking scenario
    */
+
+  cout << "obs start" << endl;
 
   vector<int> obs_x, obs_y;
 
@@ -98,8 +112,8 @@ tuple<vector<int>, vector<int>> HybridAStar::design_obstacles(int x, int y) {
   }
 
   for (int i = 0; i < y; i++) {
-    obs_x.append(x - 1);
-    obs_y.append(i);
+    obs_x.push_back(x - 1);
+    obs_y.push_back(i);
   }  
 
   for (int i = 10; i < 21; i++) {
@@ -121,6 +135,8 @@ tuple<vector<int>, vector<int>> HybridAStar::design_obstacles(int x, int y) {
     obs_x.push_back(40);
     obs_y.push_back(i);
   }
+
+  cout << "obs end" << endl;
 
   return make_tuple(obs_x, obs_y);
 }

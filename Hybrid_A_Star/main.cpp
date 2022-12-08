@@ -9,12 +9,12 @@ void test() {
   auto samples = rs.sample(q_init, q_goal, step_size);
   auto types = rs.type(q_init, q_goal);
 
-  draw_car(0.0, 0.0, deg2rad(30.0), deg2rad(20.0));
+  Draw::draw_car(0.0, 0.0, deg2rad(30.0), deg2rad(20.0));
 }
 
 
 int main() {
-  test();
+  // test();
 
   cout << "Running Path Planning for Hybrid A*\n";
 
@@ -23,7 +23,9 @@ int main() {
   // end pose
   float gx = 45.0, gy = 20.0, gyaw = deg2rad(90.0);
 
+  cout << "make obs" << endl;
   auto [obs_x, obs_y] = HybridAStar::design_obstacles(51, 31);
+  cout << "obs done" << endl;
 
   HybridAStar hybrid_a_star;
   hybrid_a_star.run_hybrid_a_star(sx, sy, syaw,

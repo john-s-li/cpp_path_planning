@@ -10,23 +10,24 @@
 #include "kdtree.hpp"
 #include "matplotlibcpp.h"
 #include "reeds_shepp.h"
-#include "draw.hpp"
 #include "config.h"
-#include "a_star_helper.hpp"
+#include "a_star_helper.h"
+#include "draw.h"
 
 using Kdtree::KdTree;
 typedef shared_ptr<Kdtree::KdTree> kdtree_ptr;
 
+using namespace std;
+
 class HybridAStar {
   public:
-    struct Node {
+    struct Node : public AStarHelper::Node { // inheritance for polymorphic function pass-in
       Node(float x_ind, float y_ind, float yaw_ind, int direction,
-          vector<float> xs, vector<float> ys, vector<float> yaws,
-          vector<int> &directions, float steer, float cost, float parent_idx)
-      : x_ind(x_ind), y_ind(y_ind), yaw_ind(yaw_ind), 
-        direction(direction),
+           vector<float> xs, vector<float> ys, vector<float> yaws,
+           vector<int> directions, float steer, float cost, float parent_idx)
+      : x_ind(x_ind), y_ind(y_ind), yaw_ind(yaw_ind), direction(direction),
         xs(xs), ys(ys), yaws(yaws),
-        directions(directions),
+        directions(directions), 
         steer(steer), cost(cost), parent_idx(parent_idx)
       {}
 
@@ -57,16 +58,18 @@ class HybridAStar {
       float cost;
     };
 
-    // extended params from config based on obstacles list
-    struct Params {
+    // extended params from AStarHelper
+    struct Params : public AStarHelper::Params {
       Params(float min_x, float min_y, float min_yaw,
             float max_x, float max_y, float max_yaw,
-            float x_width, float y_width,
+            float x_width, float y_width, float yaw_width,
+            float xy_reso, float yaw_reso,
             const vector<int> &ox, const vector<int> &oy,
             kdtree_ptr tree)
       : min_x(min_x), min_y(min_y), min_yaw(min_yaw),
         max_x(max_x), max_y(max_y), max_yaw(max_yaw),
-        x_width(x_width), y_width(y_width), ox(ox), oy(oy), tree(tree)
+        x_width(x_width), y_width(y_width), yaw_width(yaw_width),
+        xy_reso(xy_reso), yaw_reso(yaw_reso), obs_x(ox), obs_y(oy), tree(tree)
       {}
 
       float min_x;
@@ -77,15 +80,18 @@ class HybridAStar {
       float max_yaw;
       float x_width;
       float y_width;
-      vector<int> ox; // obstacle x-coords
-      vector<int> oy; // obstacle y-coords
+      float yaw_width;
+      float xy_reso;
+      float yaw_reso;
+      vector<int> obs_x; // obstacle x-coords
+      vector<int> obs_y; // obstacle y-coords
       kdtree_ptr tree;
     };
 
-    typedef tuple<float, float> idx_with_cost; // [cost, node idx]
     typedef shared_ptr<Node> node_ptr;
-    typedef unordered_map<float, node_ptr> node_set; // [node idx, node]
     typedef shared_ptr<Params> params_ptr;
+    typedef tuple<float, float> idx_with_cost; // [cost, node idx]
+    typedef unordered_map<float, node_ptr> node_set; // [node idx, node]
     typedef vector<float> steer_set;
     typedef vector<float> motion_set;
 

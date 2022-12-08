@@ -3,6 +3,8 @@
 
 #include <math.h>
 
+using namespace std;
+
 inline float deg2rad(float d) {
   return d * M_PI / 180.0;
 }

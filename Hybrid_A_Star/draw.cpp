@@ -1,21 +1,10 @@
-#ifndef DRAW_H_
-#define DRAW_H_
-
-#include <math.h>
-#include <string> 
-#include <map>
-
-#include <Eigen/Dense>
-#include "matplotlibcpp.h"
-#include "config.h"
+#include "draw.h"
 
 using namespace std;
 namespace plt = matplotlibcpp;
 
-const float PI = C::instance().PI;
-
-void draw_arrow(float x, float y, float theta, 
-                float length, string color, float line_width = 2.0) {
+void Draw::draw_arrow(float x, float y, float theta, 
+                float length, string color, float line_width) {
       
   float angle = deg2rad(30.0); // angle of the arrow head
   float d = 0.3 * length;
@@ -55,7 +44,7 @@ void draw_arrow(float x, float y, float theta,
             vector<float>{y_hat_start, y_hat_end_R}, settings);
 }
 
-void draw_car(float x, float y, float yaw, float steer, string color = "black") {
+void Draw::draw_car(float x, float y, float yaw, float steer, string color) {
   // need 5 points to close the polygon in plotter
   Eigen::Matrix<float, 2, 5, Eigen::RowMajor> car; // x-y positions of car polygon
   car << -C::instance().RB, -C::instance().RB, 
@@ -148,5 +137,3 @@ void draw_car(float x, float y, float yaw, float steer, string color = "black") 
   draw_arrow(x, y, yaw, C::instance().WB * 0.8, color);
   plt::show();
 };
-
-#endif
