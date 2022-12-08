@@ -23,9 +23,7 @@ int main() {
   // end pose
   float gx = 45.0, gy = 20.0, gyaw = deg2rad(90.0);
 
-  cout << "make obs" << endl;
   auto [obs_x, obs_y] = HybridAStar::design_obstacles(51, 31);
-  cout << "obs done" << endl;
 
   HybridAStar hybrid_a_star;
   hybrid_a_star.run_hybrid_a_star(sx, sy, syaw,

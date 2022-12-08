@@ -92,8 +92,6 @@ tuple<vector<int>, vector<int>> HybridAStar::design_obstacles(int x, int y) {
    * Make (x, y) points that compose walls of parking scenario
    */
 
-  cout << "obs start" << endl;
-
   vector<int> obs_x, obs_y;
 
   for (int i = 0; i < x; i++) {
@@ -135,8 +133,6 @@ tuple<vector<int>, vector<int>> HybridAStar::design_obstacles(int x, int y) {
     obs_x.push_back(40);
     obs_y.push_back(i);
   }
-
-  cout << "obs end" << endl;
 
   return make_tuple(obs_x, obs_y);
 }
