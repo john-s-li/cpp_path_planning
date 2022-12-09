@@ -2,6 +2,10 @@
 
 using namespace std;
 
+ostream& operator<< (ostream& out, HybridAStar::node_ptr node) {
+  return out << "(" << node->x << ", " << node->y << ")";
+}
+
 template<typename T>
 T HybridAStar::pi_2_pi(T theta) {
   while (theta > C::instance().PI) {
@@ -19,6 +23,8 @@ void HybridAStar::run_hybrid_a_star(float start_x, float start_y, float start_ya
                                     float goal_x, float goal_y, float goal_yaw,
                                     vector<int> obs_x, vector<int> obs_y,
                                     float xy_reso, float yaw_reso) {
+
+  cout << "Goal Y = " << goal_y << endl;
 
   // sxr = start x with resolution r
   float sxr = round(start_x / xy_reso), syr = round(start_y / xy_reso);
@@ -41,6 +47,8 @@ void HybridAStar::run_hybrid_a_star(float start_x, float start_y, float start_ya
                                   vector<int>{1}, 
                                   0.0, 0.0, -1.0);
 
+  cout << "Hybrid A* Goal node: " << goal_node_ << endl;
+
   // make the obstacle kd-tree
   Kdtree::KdNodeVector nodes;
 
@@ -57,11 +65,18 @@ void HybridAStar::run_hybrid_a_star(float start_x, float start_y, float start_ya
   params_ = update_parameters(obs_x, obs_y, xy_reso, yaw_reso, kd_tree);
 
   heuristic_map hmap = AStarHelper::calc_holonomic_heuristic_with_obs(
-                        goal_node_->xs.back(), goal_node_->ys.back(), 
+                        goal_node_->xs[0], goal_node_->ys[0], 
                         params_->obs_x, params_->obs_y,
                         params_->xy_reso, 1.0);
 
   cout << "Heuristic nodes map by A* helper done.\n";
+
+  for (auto row: hmap) {
+    for (auto cost: row) {
+      cout << cost << " ";
+    }
+    cout << endl;
+  }
 
 }
 
@@ -87,7 +102,6 @@ HybridAStar::params_ptr HybridAStar::update_parameters(
                              obs_x, obs_y, kd_tree);
 
 }
-
 
 
 tuple<vector<int>, vector<int>> HybridAStar::design_obstacles(int x, int y) {

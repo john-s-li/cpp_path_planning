@@ -5,6 +5,10 @@
 
 using namespace std;
 
+ostream& operator<< (ostream& out, AStarHelper::node_ptr node) {
+  return out << "(" << node->x << ", " << node->y << ")";
+}
+
 const vector<pair<int, int>> AStarHelper::Params::motion_set = {
   make_pair(-1,  0),
   make_pair(-1,  1),
@@ -71,6 +75,7 @@ heuristic_map AStarHelper::calc_holonomic_heuristic_with_obs(
 
       float cand_node_idx = calc_index(cand_node, params);
 
+      // node not visited before
       if (closed_set.find(cand_node_idx) == closed_set.end()) {
         if (open_set.find(cand_node_idx) != open_set.end()) {
           if (open_set[cand_node_idx]->cost > cand_node->cost) {
@@ -78,7 +83,7 @@ heuristic_map AStarHelper::calc_holonomic_heuristic_with_obs(
             open_set[cand_node_idx]->parent_idx = curr_node_idx;
           }
         }
-        else {
+        else { // node visited
           open_set[cand_node_idx] = cand_node;
           node_pq.push(
             make_tuple(cand_node->cost, calc_index(cand_node, params))
@@ -89,7 +94,7 @@ heuristic_map AStarHelper::calc_holonomic_heuristic_with_obs(
   }
 
   float INF = numeric_limits<float>::infinity();
-  
+
   heuristic_map hmap(params->x_width,
                      vector<float>(params->y_width, INF));
 
@@ -109,6 +114,12 @@ AStarHelper::params_ptr AStarHelper::calc_params(
   float min_y = round(*min_element(oy.begin(), oy.end()));
   float max_x = round(*max_element(ox.begin(), ox.end())); 
   float max_y = round(*max_element(oy.begin(), oy.end()));
+
+  cout << "A* Helper Params: \n";
+  cout << "min_x = " << min_x << endl;
+  cout << "min_y = " << min_y << endl;
+  cout << "max_x = " << max_x << endl;
+  cout << "max_y = " << max_y << endl;
 
   float xw = max_x - min_x, yw = max_y - min_y;
 
@@ -147,9 +158,13 @@ float AStarHelper::movement_cost(pair<int, int> motion) {
 
 bool AStarHelper::check_node(node_ptr node, params_ptr P, obs_map omap) {
   if (node->x <= P->min_x || node->x >= P->max_x ||
-      node->y <= P->min_y || node->y >= P->max_y) return false;
+      node->y <= P->min_y || node->y >= P->max_y) {
+    cout << node << " out of bounds" << endl;
+    return false;
+  }
 
   if (omap[int(node->x - P->min_x)][int(node->y - P->min_y)]) {
+    cout << node << " in obstacle" << endl;
     return false;
   }
 
