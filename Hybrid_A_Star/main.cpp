@@ -25,6 +25,9 @@ int main() {
 
   auto [obs_x, obs_y] = HybridAStar::design_obstacles(51, 31);
 
+  cout << "Size of obs_x == obs_y : " << 
+          boolalpha << (obs_x.size() == obs_y.size()) << endl;
+
   HybridAStar hybrid_a_star;
   hybrid_a_star.run_hybrid_a_star(sx, sy, syaw,
                                   gx, gy, gyaw,

@@ -29,9 +29,9 @@ heuristic_map AStarHelper::calc_holonomic_heuristic_with_obs(
     ox.push_back(obs_x[i] / reso);
     oy.push_back(obs_y[i] / reso);
   }
-
-  auto params = calc_params(ox, oy, robot_radius, reso);
-  auto o_map  = calc_obs_map(ox, oy, robot_radius, params);
+  
+  params_ptr params = calc_params(ox, oy, robot_radius, reso);
+  obs_map o_map = calc_obs_map(ox, oy, robot_radius, params);
     
 }
 
@@ -39,15 +39,15 @@ AStarHelper::params_ptr AStarHelper::calc_params(
   const vector<float> ox, const vector<float> oy,
   float robot_radius, float reso) {
 
-    float min_x = round(*min_element(ox.begin(), ox.end())); 
-    float min_y = round(*min_element(oy.begin(), oy.end()));
-    float max_x = round(*max_element(ox.begin(), ox.end())); 
-    float max_y = round(*max_element(oy.begin(), ox.end()));
+  float min_x = round(*min_element(ox.begin(), ox.end())); 
+  float min_y = round(*min_element(oy.begin(), oy.end()));
+  float max_x = round(*max_element(ox.begin(), ox.end())); 
+  float max_y = round(*max_element(oy.begin(), oy.end()));
 
-    float xw = max_x - min_x, yw = max_y - min_y;
+  float xw = max_x - min_x, yw = max_y - min_y;
 
-    return make_shared<Params>(min_x, min_y, max_x, max_y,
-                               xw, yw, reso);
+  return make_shared<Params>(min_x, min_y, max_x, max_y,
+                            xw, yw, reso);
 }
 
 obs_map AStarHelper::calc_obs_map(const vector<float> obs_x,

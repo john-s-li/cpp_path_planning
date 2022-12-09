@@ -17,7 +17,7 @@ T HybridAStar::pi_2_pi(T theta) {
 
 void HybridAStar::run_hybrid_a_star(float start_x, float start_y, float start_yaw,
                                     float goal_x, float goal_y, float goal_yaw,
-                                    vector<int> &obs_x, vector<int> &obs_y,
+                                    vector<int> obs_x, vector<int> obs_y,
                                     float xy_reso, float yaw_reso) {
 
   // sxr = start x with resolution r
@@ -46,6 +46,7 @@ void HybridAStar::run_hybrid_a_star(float start_x, float start_y, float start_ya
 
   for (int i = 0; i < obs_x.size(); i++) {
     vector<float> point(2);
+    // cout << "Obs: (" << obs_x[i] << " , " << obs_y[i] << ")\n";
     point[0] = float(obs_x[i]);
     point[1] = float(obs_y[i]);
     nodes.push_back(Kdtree::KdNode(point));
@@ -56,14 +57,14 @@ void HybridAStar::run_hybrid_a_star(float start_x, float start_y, float start_ya
   params_ = update_parameters(obs_x, obs_y, xy_reso, yaw_reso, kd_tree);
 
   heuristic_map hmap = AStarHelper::calc_holonomic_heuristic_with_obs(
-                      goal_node_->xs.back(), goal_node_->ys.back(), 
-                      params_->obs_x, params_->obs_y,
-                      params_->reso, 1.0);
+                        goal_node_->xs.back(), goal_node_->ys.back(), 
+                        params_->obs_x, params_->obs_y,
+                        params_->xy_reso, 1.0);
 
 }
 
 HybridAStar::params_ptr HybridAStar::update_parameters(
-                    vector<int> &obs_x, vector<int> &obs_y,
+                    vector<int> obs_x, vector<int> obs_y,
                     float xy_reso, float yaw_reso, kdtree_ptr kd_tree) {
 
   float min_x = round(*min_element(obs_x.begin(), obs_x.end()) / xy_reso);

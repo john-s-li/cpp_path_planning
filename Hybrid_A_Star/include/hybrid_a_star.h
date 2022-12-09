@@ -64,7 +64,7 @@ class HybridAStar {
             float max_x, float max_y, float max_yaw,
             float x_width, float y_width, float yaw_width,
             float xy_reso, float yaw_reso,
-            const vector<int> &ox, const vector<int> &oy,
+            vector<int> ox, vector<int> oy,
             kdtree_ptr tree)
       : min_x(min_x), min_y(min_y), min_yaw(min_yaw),
         max_x(max_x), max_y(max_y), max_yaw(max_yaw),
@@ -101,7 +101,7 @@ class HybridAStar {
 
     void run_hybrid_a_star(float start_x, float start_y, float start_yaw,
                            float goal_x, float goal_y, float goal_yaw,
-                           vector<int> &obs_x, vector<int> &obs_y,
+                           vector<int> obs_x, vector<int> obs_y,
                            float xy_reso, float yaw_reso);
     
     Path extract_path() const;
@@ -132,8 +132,8 @@ class HybridAStar {
 
     static bool is_same_grid(const node_ptr node1, const node_ptr node2);
     
-    static params_ptr update_parameters(vector<int> &obs_x, 
-                                        vector<int> &obs_y,
+    static params_ptr update_parameters(vector<int> obs_x, 
+                                        vector<int> obs_y,
                                         float xy_reso, float yaw_reso, 
                                         kdtree_ptr kdtree);
 
