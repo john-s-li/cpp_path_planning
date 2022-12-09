@@ -5,6 +5,7 @@
 #include <vector>
 #include <memory>
 #include <tuple>
+#include <queue>
 #include <unordered_map>
 
 #include "kdtree.hpp"

@@ -2,11 +2,17 @@
 #define CONFIG_H_
 
 #include <math.h>
+#include <limits>
 
 using namespace std;
 
 inline float deg2rad(float d) {
   return d * M_PI / 180.0;
+}
+
+template <typename T>
+inline float hypot(T x, T y) {
+  return sqrt(pow(x, 2) + pow(y, 2));
 }
 
 struct C { // Param Config

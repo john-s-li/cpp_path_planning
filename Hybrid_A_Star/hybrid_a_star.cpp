@@ -61,6 +61,8 @@ void HybridAStar::run_hybrid_a_star(float start_x, float start_y, float start_ya
                         params_->obs_x, params_->obs_y,
                         params_->xy_reso, 1.0);
 
+  cout << "Heuristic nodes map by A* helper done.\n";
+
 }
 
 HybridAStar::params_ptr HybridAStar::update_parameters(
