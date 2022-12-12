@@ -14,6 +14,7 @@
 #include "config.h"
 #include "a_star_helper.h"
 #include "draw.h"
+#include "NumCpp.hpp"
 
 using Kdtree::KdTree;
 typedef shared_ptr<Kdtree::KdTree> kdtree_ptr;
@@ -94,7 +95,7 @@ class HybridAStar {
     typedef tuple<float, float> idx_with_cost; // [cost, node idx]
     typedef unordered_map<float, node_ptr> node_set; // [node idx, node]
     typedef vector<float> steer_set;
-    typedef vector<float> motion_set;
+    typedef vector<float> direct_set;
 
   public:
     HybridAStar() = default;
@@ -129,7 +130,7 @@ class HybridAStar {
     ReedsSheppStateSpace::sample_paths analytic_expansion(
       node_ptr curr_node) const;
 
-    static tuple<steer_set, motion_set> calc_motion_set();
+    static tuple<steer_set, direct_set> calc_motion_set();
 
     static bool is_same_grid(const node_ptr node1, const node_ptr node2);
     

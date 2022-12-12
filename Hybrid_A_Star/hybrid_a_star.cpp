@@ -24,8 +24,6 @@ void HybridAStar::run_hybrid_a_star(float start_x, float start_y, float start_ya
                                     vector<int> obs_x, vector<int> obs_y,
                                     float xy_reso, float yaw_reso) {
 
-  cout << "Goal Y = " << goal_y << endl;
-
   // sxr = start x with resolution r
   float sxr = round(start_x / xy_reso), syr = round(start_y / xy_reso);
   float gxr = round(goal_x / xy_reso),  gyr = round(goal_y / xy_reso);
@@ -47,7 +45,8 @@ void HybridAStar::run_hybrid_a_star(float start_x, float start_y, float start_ya
                                   vector<int>{1}, 
                                   0.0, 0.0, -1.0);
 
-  cout << "Hybrid A* Goal node: " << goal_node_ << endl;
+  cout << "Hybrid A* Start: " << start_node_ << endl;
+  cout << "Hybrid A* Goal: " << goal_node_ << endl;
 
   // make the obstacle kd-tree
   Kdtree::KdNodeVector nodes;
@@ -69,14 +68,9 @@ void HybridAStar::run_hybrid_a_star(float start_x, float start_y, float start_ya
                         params_->obs_x, params_->obs_y,
                         params_->xy_reso, 1.0);
 
-  cout << "Heuristic nodes map by A* helper done.\n";
+  // cout << "Heuristic nodes map by A* helper done.\n";
 
-  for (auto row: hmap) {
-    for (auto cost: row) {
-      cout << cost << " ";
-    }
-    cout << endl;
-  }
+  auto [steer_set, direct_set] = calc_motion_set();
 
 }
 
@@ -103,6 +97,38 @@ HybridAStar::params_ptr HybridAStar::update_parameters(
 
 }
 
+tuple<HybridAStar::steer_set, HybridAStar::direct_set> HybridAStar::calc_motion_set() {
+  float ds = C::instance().MAX_STEER / C::instance().N_STEER;
+  float c = ds;
+  
+  steer_set s = steer_set(C::instance().N_STEER - 1);
+  s[0] = ds;
+  generate(s.begin() + 1, s.end(), [&c, ds]() -> float 
+                                    { c += ds; return c; } );
+
+  s.push_back(0.0);
+
+  c = -ds;
+  steer_set neg_s = steer_set(C::instance().N_STEER - 1);
+  neg_s[0] = -ds;
+  generate(neg_s.begin() + 1, neg_s.end(), [&c, ds]() -> float 
+                                            { c -= ds; return c; } );
+
+  s.insert(s.end(), neg_s.begin(), neg_s.end());
+
+  direct_set d = direct_set(s.size(), 1.0);
+  direct_set neg_d = direct_set(s.size(), -1.0);
+
+  d.insert(d.end(), neg_d.begin(), neg_d.end());
+
+  steer_set dup_s = s;
+  s.insert(s.end(), dup_s.begin(), dup_s.end());
+
+  // cout << "Size of steer set = " << s.size() << endl; 
+  // cout << "Size of direct set = " << d.size() << endl; 
+
+  return make_tuple(s, d);
+}
 
 tuple<vector<int>, vector<int>> HybridAStar::design_obstacles(int x, int y) {
   /**

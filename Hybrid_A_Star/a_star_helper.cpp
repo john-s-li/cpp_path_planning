@@ -39,13 +39,6 @@ heuristic_map AStarHelper::calc_holonomic_heuristic_with_obs(
   obs_map o_map(params->x_width, vector<bool>(params->y_width, false));
   calc_obs_map(o_map, ox, oy, robot_radius, params);
 
-  // for(auto r: o_map) {
-  //   for(auto c: r) {
-  //     cout << c << " ";
-  //   }
-  //   cout << endl;
-  // }
-
   AStarHelper::node_map open_set, closed_set;
   open_set[calc_index(n_goal, params)] = n_goal;
 
@@ -115,11 +108,11 @@ AStarHelper::params_ptr AStarHelper::calc_params(
   float max_x = round(*max_element(ox.begin(), ox.end())); 
   float max_y = round(*max_element(oy.begin(), oy.end()));
 
-  cout << "A* Helper Params: \n";
-  cout << "min_x = " << min_x << endl;
-  cout << "min_y = " << min_y << endl;
-  cout << "max_x = " << max_x << endl;
-  cout << "max_y = " << max_y << endl;
+  // cout << "A* Helper Params: \n";
+  // cout << "min_x = " << min_x << endl;
+  // cout << "min_y = " << min_y << endl;
+  // cout << "max_x = " << max_x << endl;
+  // cout << "max_y = " << max_y << endl;
 
   float xw = max_x - min_x, yw = max_y - min_y;
 
@@ -159,12 +152,12 @@ float AStarHelper::movement_cost(pair<int, int> motion) {
 bool AStarHelper::check_node(node_ptr node, params_ptr P, obs_map omap) {
   if (node->x <= P->min_x || node->x >= P->max_x ||
       node->y <= P->min_y || node->y >= P->max_y) {
-    cout << node << " out of bounds" << endl;
+    // cout << node << " out of bounds" << endl;
     return false;
   }
 
   if (omap[int(node->x - P->min_x)][int(node->y - P->min_y)]) {
-    cout << node << " in obstacle" << endl;
+    // cout << node << " in obstacle" << endl;
     return false;
   }
 
