@@ -90,10 +90,11 @@ class HybridAStar {
       kdtree_ptr tree;
     };
 
+    // keep here to prevent conflict with node and params from A* Helper
     typedef shared_ptr<Node> node_ptr;
     typedef shared_ptr<Params> params_ptr;
     typedef tuple<float, float> idx_with_cost; // [cost, node idx]
-    typedef unordered_map<float, node_ptr> node_set; // [node idx, node]
+    typedef unordered_map<float, node_ptr> node_map; // [node idx, node]
     typedef vector<float> steer_set;
     typedef vector<float> direct_set;
 
@@ -111,7 +112,7 @@ class HybridAStar {
     node_ptr calc_next_node(node_ptr curr_node, float hash_val, 
                             float steer_val, float direction_val);
     
-    float make_hash_val(const node_ptr node) const;
+    float calc_index(const node_ptr node) const;
     
     bool is_index_okay(float x_ind, float y_ind,
                        vector<float> x_list, vector<float> y_list,
@@ -125,7 +126,7 @@ class HybridAStar {
 
     float calc_rs_path_cost(ReedsSheppStateSpace::sample_paths rs_path) const;
 
-    float calc_hybrid_cost(node_ptr node) const;
+    float calc_hybrid_cost(const node_ptr node) const;
 
     ReedsSheppStateSpace::sample_paths analytic_expansion(
       node_ptr curr_node) const;

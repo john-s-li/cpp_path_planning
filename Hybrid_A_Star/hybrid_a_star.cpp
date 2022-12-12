@@ -3,7 +3,9 @@
 using namespace std;
 
 ostream& operator<< (ostream& out, HybridAStar::node_ptr node) {
-  return out << "(" << node->x << ", " << node->y << ")";
+  return out << "(" << node->x_ind << ", " 
+             << node->y_ind << ", "
+             << node->yaw_ind << ")";
 }
 
 template<typename T>
@@ -63,7 +65,7 @@ void HybridAStar::run_hybrid_a_star(float start_x, float start_y, float start_ya
 
   params_ = update_parameters(obs_x, obs_y, xy_reso, yaw_reso, kd_tree);
 
-  heuristic_map hmap = AStarHelper::calc_holonomic_heuristic_with_obs(
+  hmap_ = AStarHelper::calc_holonomic_heuristic_with_obs(
                         goal_node_->xs[0], goal_node_->ys[0], 
                         params_->obs_x, params_->obs_y,
                         params_->xy_reso, 1.0);
@@ -72,6 +74,46 @@ void HybridAStar::run_hybrid_a_star(float start_x, float start_y, float start_ya
 
   auto [steer_set, direct_set] = calc_motion_set();
 
+  node_map open_set, closed_set;
+  open_set[calc_index(start_node_)] = start_node_;
+
+  // cout << start_node_ << " Index = " << calc_index(start_node_)
+  //     << " | Hybrid Cost = " << calc_hybrid_cost(start_node_) << endl;
+
+  path_pq_.push(
+            make_tuple(calc_hybrid_cost(start_node_), calc_index(start_node_)));
+
+  while (true) {
+    if (open_set.empty()) break;
+
+    auto [curr_cost, curr_idx] = path_pq_.top();
+    path_pq_.pop();
+
+    node_ptr curr_node = open_set[curr_idx];
+    // add node to visited
+    closed_set[curr_idx] = curr_node;
+    // remove from to_visit open set
+    open_set.erase(curr_idx);
+
+  }
+}
+
+
+float HybridAStar::calc_index(const HybridAStar::node_ptr n) const {
+  float idx = (n->yaw_ind - params_->min_yaw) * 
+                                  params_->x_width * params_->y_width +
+              (n->y_ind - params_->min_y) * params_->x_width +
+              (n->x_ind - params_->min_x);
+
+  return idx;
+}
+
+float HybridAStar::calc_hybrid_cost(const HybridAStar::node_ptr n) const {
+  int x = int(n->x_ind - params_->min_x);
+  int y = int(n->y_ind - params_->min_y);
+  float cost = n->cost + C::instance().H_COST * hmap_[x][y];
+
+  return cost;
 }
 
 HybridAStar::params_ptr HybridAStar::update_parameters(

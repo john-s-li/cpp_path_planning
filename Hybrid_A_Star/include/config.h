@@ -29,7 +29,8 @@ struct C { // Param Config
   const float BACKWARD_COST = 5.0; // backward penalty
   const float STEER_CHANGE_COST = 5.0; // steer angle change penalty
   const float STEER_ANGLE_COST = 1.0; // steer angle penalty
-  
+  const float H_COST = 15.0; // heuristic cost penalty
+
   // vehicle related params 
   const float RF = 4.5; // [m] distance from rear to vehicle front end
   const float RB = 1.0; // [m] distance from rear to vehicle back end

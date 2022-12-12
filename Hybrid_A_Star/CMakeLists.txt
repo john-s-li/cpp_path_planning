@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.20)
 
 project(hybrid_a_star)
 
@@ -33,10 +33,10 @@ target_include_directories(
     PRIVATE
         ${Python3_INCLUDE_DIRS}
         ${NUMPY_INCLUDE_DIRS}
+        ${Boost_INCLUDE_DIRS}
+        ${hybrid_a_star_SOURCE_DIR}/include
         kdtree-cpp/include
         reeds-shepp/include
-        ${hybrid_a_star_SOURCE_DIR}/include
-        ${Boost_INCLUDE_DIRS}
 )
 
 target_link_libraries(
