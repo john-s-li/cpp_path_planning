@@ -5,7 +5,7 @@ project(hybrid_a_star)
 find_package(Python3 COMPONENTS Interpreter Development NumPy REQUIRED)
 find_package(Python3 3.0 REQUIRED)
 find_package(Eigen3 3.3 REQUIRED)
-# find_package(Boost 1.80 COMPONENTS program_options REQUIRED)
+find_package(Boost 1.80 COMPONENTS program_options REQUIRED)
 
 include(FetchContent)
 FetchContent_Declare(
@@ -36,6 +36,7 @@ target_include_directories(
         kdtree-cpp/include
         reeds-shepp/include
         ${hybrid_a_star_SOURCE_DIR}/include
+        ${Boost_INCLUDE_DIRS}
 )
 
 target_link_libraries(
