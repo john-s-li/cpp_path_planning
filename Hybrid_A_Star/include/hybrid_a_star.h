@@ -14,7 +14,10 @@
 #include "config.h"
 #include "a_star_helper.h"
 #include "draw.h"
-#include "NumCpp.hpp"
+
+// #include "NumCpp.hpp"
+
+class ReedsSheppStateSpace;
 
 using Kdtree::KdTree;
 typedef shared_ptr<Kdtree::KdTree> kdtree_ptr;
@@ -24,6 +27,9 @@ using namespace std;
 class HybridAStar {
   public:
     struct Node : public AStarHelper::Node { // inheritance for polymorphic function pass-in
+      
+      Node() = default;
+      
       Node(float x_ind, float y_ind, float yaw_ind, int direction,
            vector<float> xs, vector<float> ys, vector<float> yaws,
            vector<int> directions, float steer, float cost, float parent_idx)
@@ -47,6 +53,9 @@ class HybridAStar {
     };
 
     struct Path {
+
+      Path() = default;
+
       Path(vector<float> xs, vector<float> ys, vector<float> yaws,
           vector<int> directions, float cost) 
       : xs(xs), ys(ys), yaws(yaws),
@@ -58,10 +67,14 @@ class HybridAStar {
       vector<float> yaws;
       vector<int> directions;
       float cost;
+
     };
 
     // extended params from AStarHelper
     struct Params : public AStarHelper::Params {
+
+      Params() = default;
+
       Params(float min_x, float min_y, float min_yaw,
             float max_x, float max_y, float max_yaw,
             float x_width, float y_width, float yaw_width,
@@ -93,12 +106,15 @@ class HybridAStar {
     // keep here to prevent conflict with node and params from A* Helper
     typedef shared_ptr<Node> node_ptr;
     typedef shared_ptr<Params> params_ptr;
+    typedef shared_ptr<Path> path_ptr;
+    typedef shared_ptr<ReedsSheppStateSpace> rs_ptr;
     typedef tuple<float, float> idx_with_cost; // [cost, node idx]
     typedef unordered_map<float, node_ptr> node_map; // [node idx, node]
     typedef vector<float> steer_set;
     typedef vector<float> direct_set;
 
   public:
+
     HybridAStar() = default;
     ~HybridAStar() = default;
 
@@ -122,14 +138,13 @@ class HybridAStar {
                       vector<float> yaws) const;
 
     tuple<bool, node_ptr> update_node_with_analytic_expansion(
-      node_ptr curr_node) const;
+      node_ptr n) const;
 
-    float calc_rs_path_cost(ReedsSheppStateSpace::sample_paths rs_path) const;
+    float calc_rs_path_cost(vector<vector<float>> rs_path) const;
 
     float calc_hybrid_cost(const node_ptr node) const;
 
-    ReedsSheppStateSpace::sample_paths analytic_expansion(
-      node_ptr curr_node) const;
+    path_ptr analytic_expansion(node_ptr n) const;
 
     static tuple<steer_set, direct_set> calc_motion_set();
 
@@ -153,11 +168,12 @@ class HybridAStar {
                    vector<idx_with_cost>,
                    greater<idx_with_cost>> path_pq_;
 
-    node_set closed_set_; // visited nodes
-    node_set open_set_; // nodes to be visited
+    node_map closed_list_; // visited nodes
+    node_map open_list_; // nodes to be visited
 
-    shared_ptr<Path> best_path_;
+    path_ptr best_path_;
     params_ptr params_;
+    rs_ptr rs_;
 
     heuristic_map hmap_;
 };

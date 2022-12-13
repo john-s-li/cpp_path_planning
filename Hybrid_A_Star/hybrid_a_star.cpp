@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "hybrid_a_star.h"
 
 using namespace std;
@@ -8,7 +9,7 @@ ostream& operator<< (ostream& out, HybridAStar::node_ptr node) {
              << node->yaw_ind << ")";
 }
 
-template<typename T>
+template <typename T>
 T HybridAStar::pi_2_pi(T theta) {
   while (theta > C::instance().PI) {
     theta -= 2.0 * C::instance().PI;
@@ -21,10 +22,16 @@ T HybridAStar::pi_2_pi(T theta) {
   return theta;
 }
 
+// member function definitions ===============================================
+
 void HybridAStar::run_hybrid_a_star(float start_x, float start_y, float start_yaw,
                                     float goal_x, float goal_y, float goal_yaw,
                                     vector<int> obs_x, vector<int> obs_y,
                                     float xy_reso, float yaw_reso) {
+
+  // initialize Reeds Shepp member to prevent repeat allocations
+  float max_c = tan(C::instance().MAX_STEER / C::instance().WB);
+  rs_ = make_shared<ReedsSheppStateSpace>(max_c);
 
   // sxr = start x with resolution r
   float sxr = round(start_x / xy_reso), syr = round(start_y / xy_reso);
@@ -74,8 +81,7 @@ void HybridAStar::run_hybrid_a_star(float start_x, float start_y, float start_ya
 
   auto [steer_set, direct_set] = calc_motion_set();
 
-  node_map open_set, closed_set;
-  open_set[calc_index(start_node_)] = start_node_;
+  open_list_[calc_index(start_node_)] = start_node_;
 
   // cout << start_node_ << " Index = " << calc_index(start_node_)
   //     << " | Hybrid Cost = " << calc_hybrid_cost(start_node_) << endl;
@@ -84,16 +90,18 @@ void HybridAStar::run_hybrid_a_star(float start_x, float start_y, float start_ya
             make_tuple(calc_hybrid_cost(start_node_), calc_index(start_node_)));
 
   while (true) {
-    if (open_set.empty()) break;
+    if (open_list_.empty()) break;
 
     auto [curr_cost, curr_idx] = path_pq_.top();
     path_pq_.pop();
 
-    node_ptr curr_node = open_set[curr_idx];
+    node_ptr curr_node = open_list_[curr_idx];
     // add node to visited
-    closed_set[curr_idx] = curr_node;
+    closed_list_[curr_idx] = curr_node;
     // remove from to_visit open set
-    open_set.erase(curr_idx);
+    open_list_.erase(curr_idx);
+
+    auto [update, f_path] = update_node_with_analytic_expansion(curr_node);
 
   }
 }
@@ -108,6 +116,7 @@ float HybridAStar::calc_index(const HybridAStar::node_ptr n) const {
   return idx;
 }
 
+
 float HybridAStar::calc_hybrid_cost(const HybridAStar::node_ptr n) const {
   int x = int(n->x_ind - params_->min_x);
   int y = int(n->y_ind - params_->min_y);
@@ -115,6 +124,54 @@ float HybridAStar::calc_hybrid_cost(const HybridAStar::node_ptr n) const {
 
   return cost;
 }
+
+
+tuple<bool, HybridAStar::node_ptr> HybridAStar::update_node_with_analytic_expansion(
+  node_ptr n) const {
+  /*
+   * Fill in the xs, yws, yaws, and cost of node n 
+   * based on the results of all possible reeds-shepp
+   * curves originating from node n
+   */
+
+  path_ptr path = analytic_expansion(n);
+
+  if (path == nullptr) {
+    return make_tuple(false, make_shared<Node>());
+  }
+}
+
+
+HybridAStar::path_ptr HybridAStar::analytic_expansion(
+  node_ptr n) const {
+  /*
+   * Returns the reeds-shepp path, originating from node n,
+   * with the lowest cost
+   */
+
+  float sx = n->xs.back(), sy = n->ys.back(), syaw = n->yaws.back();
+  float gx = goal_node_->xs.back(), gy = goal_node_->ys.back(), 
+             gyaw = goal_node_->yaws.back();
+  
+  // make inputs to Reeds-Sheep curve generator
+  float q0[3] = {sx, sy, syaw}, q1[3] = {gx, gy, gyaw};
+
+  printf("Looking for RS paths.\n");
+  ReedsSheppStateSpace::sample_paths paths = 
+    rs_->sample(q0, q1, C::instance().MOVE_STEP);
+  printf("Looking for RS paths done.\n");
+  
+
+  if (paths.size() == 0) return make_shared<Path>();
+
+  printf("RS Path found.\n");
+  for (const auto q: paths) {
+    printf("\t%.2f, %.2f, %.2f\n", q[0], q[1], q[2]);
+  }
+
+}
+
+// static member function definitions =========================================
 
 HybridAStar::params_ptr HybridAStar::update_parameters(
                     vector<int> obs_x, vector<int> obs_y,
